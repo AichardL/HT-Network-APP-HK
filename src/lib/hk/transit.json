@@ -1,0 +1,4497 @@
+{
+  "heavy": {
+    "source": {
+      "status": "real",
+      "provider": "MTR Corporation / DATA.GOV.HK",
+      "actualSource": "https://opendata.mtr.com.hk/data/mtr_lines_and_stations.csv",
+      "period": "monthly open-data snapshot",
+      "retrievedAt": "2026-10-20T13:15:01.056Z",
+      "note": "官方港鐵重鐵線路及車站順序；MTR CSV 不提供坐標，快照优先按 OpenStreetMap 节点匹配，缺失坐标由 Lands Department Location Search API 补齐。 本地快照包含 95 个可绘制重铁站点。"
+    },
+    "lines": [
+      {
+        "id": "mtr-heavy-AEL",
+        "code": "AEL",
+        "name": "機場快線",
+        "en": "Airport Express",
+        "color": "#1f2937",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-AWE",
+            "code": "AWE",
+            "name": "博覽館",
+            "en": "AsiaWorld-Expo",
+            "lat": 22.3219881,
+            "lng": 113.9422214,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-AIR",
+            "code": "AIR",
+            "name": "機場",
+            "en": "Airport",
+            "lat": 22.31615341251005,
+            "lng": 113.93656993270507,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TSY",
+            "code": "TSY",
+            "name": "青衣",
+            "en": "Tsing Yi",
+            "lat": 22.3583631,
+            "lng": 114.1074287,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KOW",
+            "code": "KOW",
+            "name": "九龍",
+            "en": "Kowloon",
+            "lat": 22.3049255,
+            "lng": 114.1616003,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HOK",
+            "code": "HOK",
+            "name": "香港",
+            "en": "Hong Kong",
+            "lat": 22.288210992211805,
+            "lng": 114.1554676624346,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-DRL",
+        "code": "DRL",
+        "name": "DRL",
+        "en": "DRL",
+        "color": "#475569",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-SUN",
+            "code": "SUN",
+            "name": "欣澳",
+            "en": "Sunny Bay",
+            "lat": 22.3319843,
+            "lng": 114.0289149,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-DIS",
+            "code": "DIS",
+            "name": "迪士尼",
+            "en": "Disneyland Resort",
+            "lat": 22.315728046785605,
+            "lng": 114.04493454442057,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-EAL",
+        "code": "EAL",
+        "name": "東鐵線",
+        "en": "East Rail Line",
+        "color": "#53b7e8",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-LOW",
+            "code": "LOW",
+            "name": "羅湖",
+            "en": "Lo Wu",
+            "lat": 22.5281768,
+            "lng": 114.1133387,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SHS",
+            "code": "SHS",
+            "name": "上水",
+            "en": "Sheung Shui",
+            "lat": 22.5011624,
+            "lng": 114.1280325,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-FAN",
+            "code": "FAN",
+            "name": "粉嶺",
+            "en": "Fanling",
+            "lat": 22.492342523511503,
+            "lng": 114.13875787966344,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TWO",
+            "code": "TWO",
+            "name": "太和",
+            "en": "Tai Wo",
+            "lat": 22.45115873884659,
+            "lng": 114.16122126964305,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TAP",
+            "code": "TAP",
+            "name": "大埔墟",
+            "en": "Tai Po Market",
+            "lat": 22.4446507,
+            "lng": 114.1706348,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-UNI",
+            "code": "UNI",
+            "name": "大學",
+            "en": "University",
+            "lat": 22.4135688,
+            "lng": 114.2101033,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-FOT",
+            "code": "FOT",
+            "name": "火炭",
+            "en": "Fo Tan",
+            "lat": 22.39606347981799,
+            "lng": 114.19858740724928,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SHT",
+            "code": "SHT",
+            "name": "沙田",
+            "en": "Sha Tin",
+            "lat": 22.377153987445777,
+            "lng": 114.19489491168301,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TAW",
+            "code": "TAW",
+            "name": "大圍",
+            "en": "Tai Wai",
+            "lat": 22.37300076727521,
+            "lng": 114.17877635677343,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KOT",
+            "code": "KOT",
+            "name": "九龍塘",
+            "en": "Kowloon Tong",
+            "lat": 22.3370021,
+            "lng": 114.1758588,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-MKK",
+            "code": "MKK",
+            "name": "旺角東",
+            "en": "Mong Kok East",
+            "lat": 22.319539569336,
+            "lng": 114.16943912131691,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HUH",
+            "code": "HUH",
+            "name": "紅磡",
+            "en": "Hung Hom",
+            "lat": 22.3029008,
+            "lng": 114.182248,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-EXC",
+            "code": "EXC",
+            "name": "會展",
+            "en": "Exhibition Centre",
+            "lat": 22.2816132,
+            "lng": 114.1756895,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-ADM",
+            "code": "ADM",
+            "name": "金鐘",
+            "en": "Admiralty",
+            "lat": 22.278766012619208,
+            "lng": 114.16485217074874,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-ISL",
+        "code": "ISL",
+        "name": "港島線",
+        "en": "Island Line",
+        "color": "#007cc3",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-CHW",
+            "code": "CHW",
+            "name": "柴灣",
+            "en": "Chai Wan",
+            "lat": 22.2644535,
+            "lng": 114.237044,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HFC",
+            "code": "HFC",
+            "name": "杏花邨",
+            "en": "Heng Fa Chuen",
+            "lat": 22.2766726,
+            "lng": 114.2397196,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SKW",
+            "code": "SKW",
+            "name": "筲箕灣",
+            "en": "Shau Kei Wan",
+            "lat": 22.2791735,
+            "lng": 114.2288415,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SWH",
+            "code": "SWH",
+            "name": "西灣河",
+            "en": "Sai Wan Ho",
+            "lat": 22.2816305,
+            "lng": 114.2222887,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TAK",
+            "code": "TAK",
+            "name": "太古",
+            "en": "Tai Koo",
+            "lat": 22.2846366,
+            "lng": 114.2163223,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-QUB",
+            "code": "QUB",
+            "name": "鰂魚涌",
+            "en": "Quarry Bay",
+            "lat": 22.2881654,
+            "lng": 114.208992,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-NOP",
+            "code": "NOP",
+            "name": "北角",
+            "en": "North Point",
+            "lat": 22.2909093,
+            "lng": 114.2007532,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-FOH",
+            "code": "FOH",
+            "name": "炮台山",
+            "en": "Fortress Hill",
+            "lat": 22.2875631,
+            "lng": 114.1933149,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TIH",
+            "code": "TIH",
+            "name": "天后",
+            "en": "Tin Hau",
+            "lat": 22.2822771,
+            "lng": 114.1919173,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CAB",
+            "code": "CAB",
+            "name": "銅鑼灣",
+            "en": "Causeway Bay",
+            "lat": 22.280879648486117,
+            "lng": 114.184578790099,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-WAC",
+            "code": "WAC",
+            "name": "灣仔",
+            "en": "Wan Chai",
+            "lat": 22.2775843,
+            "lng": 114.1728604,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-ADM",
+            "code": "ADM",
+            "name": "金鐘",
+            "en": "Admiralty",
+            "lat": 22.278766012619208,
+            "lng": 114.16485217074874,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CEN",
+            "code": "CEN",
+            "name": "中環",
+            "en": "Central",
+            "lat": 22.282386545687427,
+            "lng": 114.15776832737174,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SHW",
+            "code": "SHW",
+            "name": "上環",
+            "en": "Sheung Wan",
+            "lat": 22.286837822785397,
+            "lng": 114.1521006975781,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SYP",
+            "code": "SYP",
+            "name": "西營盤",
+            "en": "Sai Ying Pun",
+            "lat": 22.2854347,
+            "lng": 114.1426424,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HKU",
+            "code": "HKU",
+            "name": "香港大學",
+            "en": "HKU",
+            "lat": 22.2839758,
+            "lng": 114.1355067,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KET",
+            "code": "KET",
+            "name": "堅尼地城",
+            "en": "Kennedy Town",
+            "lat": 22.2812252,
+            "lng": 114.1283812,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-KTL",
+        "code": "KTL",
+        "name": "觀塘線",
+        "en": "Kwun Tong Line",
+        "color": "#00a54f",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-TIK",
+            "code": "TIK",
+            "name": "調景嶺",
+            "en": "Tiu Keng Leng",
+            "lat": 22.3040753,
+            "lng": 114.2523705,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-YAT",
+            "code": "YAT",
+            "name": "油塘",
+            "en": "Yau Tong",
+            "lat": 22.2977882,
+            "lng": 114.2371593,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LAT",
+            "code": "LAT",
+            "name": "藍田",
+            "en": "Lam Tin",
+            "lat": 22.307068518490453,
+            "lng": 114.23282404049114,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KWT",
+            "code": "KWT",
+            "name": "觀塘",
+            "en": "Kwun Tong",
+            "lat": 22.312326296462384,
+            "lng": 114.22658545062623,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-NTK",
+            "code": "NTK",
+            "name": "牛頭角",
+            "en": "Ngau Tau Kok",
+            "lat": 22.315741915598124,
+            "lng": 114.21906469087904,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KOB",
+            "code": "KOB",
+            "name": "九龍灣",
+            "en": "Kowloon Bay",
+            "lat": 22.323699034678548,
+            "lng": 114.2140876736694,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CHH",
+            "code": "CHH",
+            "name": "彩虹",
+            "en": "Choi Hung",
+            "lat": 22.334301836795074,
+            "lng": 114.20972220973832,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-DIH",
+            "code": "DIH",
+            "name": "鑽石山",
+            "en": "Diamond Hill",
+            "lat": 22.34027238550518,
+            "lng": 114.201734336427,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-WTS",
+            "code": "WTS",
+            "name": "黃大仙",
+            "en": "Wong Tai Sin",
+            "lat": 22.341916875003758,
+            "lng": 114.19395887961308,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LOF",
+            "code": "LOF",
+            "name": "樂富",
+            "en": "Lok Fu",
+            "lat": 22.3380228,
+            "lng": 114.187233,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KOT",
+            "code": "KOT",
+            "name": "九龍塘",
+            "en": "Kowloon Tong",
+            "lat": 22.3370021,
+            "lng": 114.1758588,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SKM",
+            "code": "SKM",
+            "name": "石硤尾",
+            "en": "Shek Kip Mei",
+            "lat": 22.332028840419635,
+            "lng": 114.16890443353752,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-PRE",
+            "code": "PRE",
+            "name": "太子",
+            "en": "Prince Edward",
+            "lat": 22.3244547,
+            "lng": 114.1683017,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-MOK",
+            "code": "MOK",
+            "name": "旺角",
+            "en": "Mong Kok",
+            "lat": 22.319539569336,
+            "lng": 114.16943912131691,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-YMT",
+            "code": "YMT",
+            "name": "油麻地",
+            "en": "Yau Ma Tei",
+            "lat": 22.313073729779394,
+            "lng": 114.17074978792398,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HOM",
+            "code": "HOM",
+            "name": "何文田",
+            "en": "Ho Man Tin",
+            "lat": 22.309624174809343,
+            "lng": 114.18267778478582,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-WHA",
+            "code": "WHA",
+            "name": "黃埔",
+            "en": "Whampoa",
+            "lat": 22.305045285655662,
+            "lng": 114.19027664703273,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-TML",
+        "code": "TML",
+        "name": "屯馬線",
+        "en": "Tuen Ma Line",
+        "color": "#9b3a8f",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-TUM",
+            "code": "TUM",
+            "name": "屯門",
+            "en": "Tuen Mun",
+            "lat": 22.3938221,
+            "lng": 113.973107,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SIH",
+            "code": "SIH",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TIS",
+            "code": "TIS",
+            "name": "天水圍",
+            "en": "Tin Shui Wai",
+            "lat": 22.4493998,
+            "lng": 114.0060435,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LOP",
+            "code": "LOP",
+            "name": "朗屏",
+            "en": "Long Ping",
+            "lat": 22.447863266471522,
+            "lng": 114.02553401898207,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-YUL",
+            "code": "YUL",
+            "name": "元朗",
+            "en": "Yuen Long",
+            "lat": 22.4456518,
+            "lng": 114.0346405,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KSR",
+            "code": "KSR",
+            "name": "錦上路",
+            "en": "Kam Sheung Road",
+            "lat": 22.435369399647946,
+            "lng": 114.06326716549056,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TWW",
+            "code": "TWW",
+            "name": "荃灣西",
+            "en": "Tsuen Wan West",
+            "lat": 22.373757096229003,
+            "lng": 114.11816821042237,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-MEF",
+            "code": "MEF",
+            "name": "美孚",
+            "en": "Mei Foo",
+            "lat": 22.3379273,
+            "lng": 114.1391803,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-NAC",
+            "code": "NAC",
+            "name": "南昌",
+            "en": "Nam Cheong",
+            "lat": 22.3263553,
+            "lng": 114.1535827,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-AUS",
+            "code": "AUS",
+            "name": "柯士甸",
+            "en": "Austin",
+            "lat": 22.3042356,
+            "lng": 114.1666014,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-ETS",
+            "code": "ETS",
+            "name": "尖東",
+            "en": "East Tsim Sha Tsui",
+            "lat": 22.295561,
+            "lng": 114.1750721,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HUH",
+            "code": "HUH",
+            "name": "紅磡",
+            "en": "Hung Hom",
+            "lat": 22.3029008,
+            "lng": 114.182248,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HOM",
+            "code": "HOM",
+            "name": "何文田",
+            "en": "Ho Man Tin",
+            "lat": 22.309624174809343,
+            "lng": 114.18267778478582,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TKW",
+            "code": "TKW",
+            "name": "土瓜灣",
+            "en": "To Kwa Wan",
+            "lat": 22.3169748,
+            "lng": 114.1876486,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SUW",
+            "code": "SUW",
+            "name": "宋皇臺",
+            "en": "Sung Wong Toi",
+            "lat": 22.32721543888091,
+            "lng": 114.18977375971367,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KAT",
+            "code": "KAT",
+            "name": "啟德",
+            "en": "Kai Tak",
+            "lat": 22.33108846705651,
+            "lng": 114.20046123091848,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-DIH",
+            "code": "DIH",
+            "name": "鑽石山",
+            "en": "Diamond Hill",
+            "lat": 22.34027238550518,
+            "lng": 114.201734336427,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HIK",
+            "code": "HIK",
+            "name": "顯徑",
+            "en": "Hin Keng",
+            "lat": 22.363961012467012,
+            "lng": 114.17082462726536,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TAW",
+            "code": "TAW",
+            "name": "大圍",
+            "en": "Tai Wai",
+            "lat": 22.37300076727521,
+            "lng": 114.17877635677343,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CKT",
+            "code": "CKT",
+            "name": "車公廟",
+            "en": "Che Kung Temple",
+            "lat": 22.37512277821308,
+            "lng": 114.18585482477452,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-STW",
+            "code": "STW",
+            "name": "沙田圍",
+            "en": "Sha Tin Wai",
+            "lat": 22.382365206184136,
+            "lng": 114.18700102152008,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CIO",
+            "code": "CIO",
+            "name": "第一城",
+            "en": "City One",
+            "lat": 22.383203309375588,
+            "lng": 114.20371265056374,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SHM",
+            "code": "SHM",
+            "name": "石門",
+            "en": "Shek Mun",
+            "lat": 22.388115076919117,
+            "lng": 114.20860774114679,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TSH",
+            "code": "TSH",
+            "name": "大水坑",
+            "en": "Tai Shui Hang",
+            "lat": 22.408430484682604,
+            "lng": 114.2226849979182,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HEO",
+            "code": "HEO",
+            "name": "恆安",
+            "en": "Heng On",
+            "lat": 22.418101209439115,
+            "lng": 114.22596126988702,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-MOS",
+            "code": "MOS",
+            "name": "馬鞍山",
+            "en": "Ma On Shan",
+            "lat": 22.425152107111597,
+            "lng": 114.23206361626559,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-WKS",
+            "code": "WKS",
+            "name": "烏溪沙",
+            "en": "Wu Kai Sha",
+            "lat": 22.429392059643423,
+            "lng": 114.24393525398546,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-TCL",
+        "code": "TCL",
+        "name": "東涌線",
+        "en": "Tung Chung Line",
+        "color": "#f59e0b",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-TUC",
+            "code": "TUC",
+            "name": "東涌",
+            "en": "Tung Chung",
+            "lat": 22.2892449,
+            "lng": 113.9413739,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SUN",
+            "code": "SUN",
+            "name": "欣澳",
+            "en": "Sunny Bay",
+            "lat": 22.3319843,
+            "lng": 114.0289149,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TSY",
+            "code": "TSY",
+            "name": "青衣",
+            "en": "Tsing Yi",
+            "lat": 22.3583631,
+            "lng": 114.1074287,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LAK",
+            "code": "LAK",
+            "name": "茘景",
+            "en": "Lai King",
+            "lat": 22.34858275818523,
+            "lng": 114.12627552200134,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-NAC",
+            "code": "NAC",
+            "name": "南昌",
+            "en": "Nam Cheong",
+            "lat": 22.3263553,
+            "lng": 114.1535827,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-OLY",
+            "code": "OLY",
+            "name": "奧運",
+            "en": "Olympic",
+            "lat": 22.318030692561962,
+            "lng": 114.16033510956295,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KOW",
+            "code": "KOW",
+            "name": "九龍",
+            "en": "Kowloon",
+            "lat": 22.3049255,
+            "lng": 114.1616003,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HOK",
+            "code": "HOK",
+            "name": "香港",
+            "en": "Hong Kong",
+            "lat": 22.288210992211805,
+            "lng": 114.1554676624346,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-TKL",
+        "code": "TKL",
+        "name": "將軍澳線",
+        "en": "Tseung Kwan O Line",
+        "color": "#7d499d",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-POA",
+            "code": "POA",
+            "name": "寶琳",
+            "en": "Po Lam",
+            "lat": 22.322798485860663,
+            "lng": 114.25795947046682,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-HAH",
+            "code": "HAH",
+            "name": "坑口",
+            "en": "Hang Hau",
+            "lat": 22.3155713,
+            "lng": 114.2644401,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TKO",
+            "code": "TKO",
+            "name": "將軍澳",
+            "en": "Tseung Kwan O",
+            "lat": 22.307680213835365,
+            "lng": 114.26009575884972,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TIK",
+            "code": "TIK",
+            "name": "調景嶺",
+            "en": "Tiu Keng Leng",
+            "lat": 22.3040753,
+            "lng": 114.2523705,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-YAT",
+            "code": "YAT",
+            "name": "油塘",
+            "en": "Yau Tong",
+            "lat": 22.2977882,
+            "lng": 114.2371593,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-QUB",
+            "code": "QUB",
+            "name": "鰂魚涌",
+            "en": "Quarry Bay",
+            "lat": 22.2881654,
+            "lng": 114.208992,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-NOP",
+            "code": "NOP",
+            "name": "北角",
+            "en": "North Point",
+            "lat": 22.2909093,
+            "lng": 114.2007532,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-TWL",
+        "code": "TWL",
+        "name": "荃灣線",
+        "en": "Tsuen Wan Line",
+        "color": "#e2231a",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-TSW",
+            "code": "TSW",
+            "name": "荃灣",
+            "en": "Tsuen Wan",
+            "lat": 22.3737381,
+            "lng": 114.117642,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TWH",
+            "code": "TWH",
+            "name": "大窩口",
+            "en": "Tai Wo Hau",
+            "lat": 22.416820268292373,
+            "lng": 114.07582159122579,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KWH",
+            "code": "KWH",
+            "name": "葵興",
+            "en": "Kwai Hing",
+            "lat": 22.363313134168973,
+            "lng": 114.13130899963792,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-KWF",
+            "code": "KWF",
+            "name": "葵芳",
+            "en": "Kwai Fong",
+            "lat": 22.35703586551868,
+            "lng": 114.12787428248461,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LAK",
+            "code": "LAK",
+            "name": "茘景",
+            "en": "Lai King",
+            "lat": 22.34858275818523,
+            "lng": 114.12627552200134,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-MEF",
+            "code": "MEF",
+            "name": "美孚",
+            "en": "Mei Foo",
+            "lat": 22.3379273,
+            "lng": 114.1391803,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LCK",
+            "code": "LCK",
+            "name": "茘枝角",
+            "en": "Lai Chi Kok",
+            "lat": 22.3373962,
+            "lng": 114.1484136,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CSW",
+            "code": "CSW",
+            "name": "長沙灣",
+            "en": "Cheung Sha Wan",
+            "lat": 22.3355066,
+            "lng": 114.1561596,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-SSP",
+            "code": "SSP",
+            "name": "深水埗",
+            "en": "Sham Shui Po",
+            "lat": 22.331125245137677,
+            "lng": 114.16220681771735,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-PRE",
+            "code": "PRE",
+            "name": "太子",
+            "en": "Prince Edward",
+            "lat": 22.3244547,
+            "lng": 114.1683017,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-MOK",
+            "code": "MOK",
+            "name": "旺角",
+            "en": "Mong Kok",
+            "lat": 22.319539569336,
+            "lng": 114.16943912131691,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-YMT",
+            "code": "YMT",
+            "name": "油麻地",
+            "en": "Yau Ma Tei",
+            "lat": 22.313073729779394,
+            "lng": 114.17074978792398,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-JOR",
+            "code": "JOR",
+            "name": "佐敦",
+            "en": "Jordan",
+            "lat": 22.30575899212122,
+            "lng": 114.17193420764688,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-TST",
+            "code": "TST",
+            "name": "尖沙咀",
+            "en": "Tsim Sha Tsui",
+            "lat": 22.297938493755403,
+            "lng": 114.17226452874019,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-ADM",
+            "code": "ADM",
+            "name": "金鐘",
+            "en": "Admiralty",
+            "lat": 22.278766012619208,
+            "lng": 114.16485217074874,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-CEN",
+            "code": "CEN",
+            "name": "中環",
+            "en": "Central",
+            "lat": 22.282386545687427,
+            "lng": 114.15776832737174,
+            "mode": "heavy"
+          }
+        ]
+      },
+      {
+        "id": "mtr-heavy-SIL",
+        "code": "SIL",
+        "name": "南港島線",
+        "en": "South Island Line",
+        "color": "#b5bd00",
+        "mode": "heavy",
+        "stations": [
+          {
+            "id": "mtr-heavy-SOH",
+            "code": "SOH",
+            "name": "海怡半島",
+            "en": "South Horizons",
+            "lat": 22.24369785883269,
+            "lng": 114.14901426764916,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-LET",
+            "code": "LET",
+            "name": "利東",
+            "en": "Lei Tung",
+            "lat": 22.242082498584324,
+            "lng": 114.15608636811548,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-WCH",
+            "code": "WCH",
+            "name": "黃竹坑",
+            "en": "Wong Chuk Hang",
+            "lat": 22.2478643,
+            "lng": 114.1675119,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-OCP",
+            "code": "OCP",
+            "name": "海洋公園",
+            "en": "Ocean Park",
+            "lat": 22.24893828158015,
+            "lng": 114.17441066397058,
+            "mode": "heavy"
+          },
+          {
+            "id": "mtr-heavy-ADM",
+            "code": "ADM",
+            "name": "金鐘",
+            "en": "Admiralty",
+            "lat": 22.278766012619208,
+            "lng": 114.16485217074874,
+            "mode": "heavy"
+          }
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "mtr-heavy-AWE",
+        "code": "AWE",
+        "name": "博覽館",
+        "en": "AsiaWorld-Expo",
+        "lat": 22.3219881,
+        "lng": 113.9422214,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-AIR",
+        "code": "AIR",
+        "name": "機場",
+        "en": "Airport",
+        "lat": 22.31615341251005,
+        "lng": 113.93656993270507,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TSY",
+        "code": "TSY",
+        "name": "青衣",
+        "en": "Tsing Yi",
+        "lat": 22.3583631,
+        "lng": 114.1074287,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KOW",
+        "code": "KOW",
+        "name": "九龍",
+        "en": "Kowloon",
+        "lat": 22.3049255,
+        "lng": 114.1616003,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HOK",
+        "code": "HOK",
+        "name": "香港",
+        "en": "Hong Kong",
+        "lat": 22.288210992211805,
+        "lng": 114.1554676624346,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SUN",
+        "code": "SUN",
+        "name": "欣澳",
+        "en": "Sunny Bay",
+        "lat": 22.3319843,
+        "lng": 114.0289149,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-DIS",
+        "code": "DIS",
+        "name": "迪士尼",
+        "en": "Disneyland Resort",
+        "lat": 22.315728046785605,
+        "lng": 114.04493454442057,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LOW",
+        "code": "LOW",
+        "name": "羅湖",
+        "en": "Lo Wu",
+        "lat": 22.5281768,
+        "lng": 114.1133387,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SHS",
+        "code": "SHS",
+        "name": "上水",
+        "en": "Sheung Shui",
+        "lat": 22.5011624,
+        "lng": 114.1280325,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-FAN",
+        "code": "FAN",
+        "name": "粉嶺",
+        "en": "Fanling",
+        "lat": 22.492342523511503,
+        "lng": 114.13875787966344,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TWO",
+        "code": "TWO",
+        "name": "太和",
+        "en": "Tai Wo",
+        "lat": 22.45115873884659,
+        "lng": 114.16122126964305,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TAP",
+        "code": "TAP",
+        "name": "大埔墟",
+        "en": "Tai Po Market",
+        "lat": 22.4446507,
+        "lng": 114.1706348,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-UNI",
+        "code": "UNI",
+        "name": "大學",
+        "en": "University",
+        "lat": 22.4135688,
+        "lng": 114.2101033,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-FOT",
+        "code": "FOT",
+        "name": "火炭",
+        "en": "Fo Tan",
+        "lat": 22.39606347981799,
+        "lng": 114.19858740724928,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SHT",
+        "code": "SHT",
+        "name": "沙田",
+        "en": "Sha Tin",
+        "lat": 22.377153987445777,
+        "lng": 114.19489491168301,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TAW",
+        "code": "TAW",
+        "name": "大圍",
+        "en": "Tai Wai",
+        "lat": 22.37300076727521,
+        "lng": 114.17877635677343,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KOT",
+        "code": "KOT",
+        "name": "九龍塘",
+        "en": "Kowloon Tong",
+        "lat": 22.3370021,
+        "lng": 114.1758588,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-MKK",
+        "code": "MKK",
+        "name": "旺角東",
+        "en": "Mong Kok East",
+        "lat": 22.319539569336,
+        "lng": 114.16943912131691,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HUH",
+        "code": "HUH",
+        "name": "紅磡",
+        "en": "Hung Hom",
+        "lat": 22.3029008,
+        "lng": 114.182248,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-EXC",
+        "code": "EXC",
+        "name": "會展",
+        "en": "Exhibition Centre",
+        "lat": 22.2816132,
+        "lng": 114.1756895,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-ADM",
+        "code": "ADM",
+        "name": "金鐘",
+        "en": "Admiralty",
+        "lat": 22.278766012619208,
+        "lng": 114.16485217074874,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CHW",
+        "code": "CHW",
+        "name": "柴灣",
+        "en": "Chai Wan",
+        "lat": 22.2644535,
+        "lng": 114.237044,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HFC",
+        "code": "HFC",
+        "name": "杏花邨",
+        "en": "Heng Fa Chuen",
+        "lat": 22.2766726,
+        "lng": 114.2397196,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SKW",
+        "code": "SKW",
+        "name": "筲箕灣",
+        "en": "Shau Kei Wan",
+        "lat": 22.2791735,
+        "lng": 114.2288415,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SWH",
+        "code": "SWH",
+        "name": "西灣河",
+        "en": "Sai Wan Ho",
+        "lat": 22.2816305,
+        "lng": 114.2222887,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TAK",
+        "code": "TAK",
+        "name": "太古",
+        "en": "Tai Koo",
+        "lat": 22.2846366,
+        "lng": 114.2163223,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-QUB",
+        "code": "QUB",
+        "name": "鰂魚涌",
+        "en": "Quarry Bay",
+        "lat": 22.2881654,
+        "lng": 114.208992,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-NOP",
+        "code": "NOP",
+        "name": "北角",
+        "en": "North Point",
+        "lat": 22.2909093,
+        "lng": 114.2007532,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-FOH",
+        "code": "FOH",
+        "name": "炮台山",
+        "en": "Fortress Hill",
+        "lat": 22.2875631,
+        "lng": 114.1933149,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TIH",
+        "code": "TIH",
+        "name": "天后",
+        "en": "Tin Hau",
+        "lat": 22.2822771,
+        "lng": 114.1919173,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CAB",
+        "code": "CAB",
+        "name": "銅鑼灣",
+        "en": "Causeway Bay",
+        "lat": 22.280879648486117,
+        "lng": 114.184578790099,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-WAC",
+        "code": "WAC",
+        "name": "灣仔",
+        "en": "Wan Chai",
+        "lat": 22.2775843,
+        "lng": 114.1728604,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CEN",
+        "code": "CEN",
+        "name": "中環",
+        "en": "Central",
+        "lat": 22.282386545687427,
+        "lng": 114.15776832737174,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SHW",
+        "code": "SHW",
+        "name": "上環",
+        "en": "Sheung Wan",
+        "lat": 22.286837822785397,
+        "lng": 114.1521006975781,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SYP",
+        "code": "SYP",
+        "name": "西營盤",
+        "en": "Sai Ying Pun",
+        "lat": 22.2854347,
+        "lng": 114.1426424,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HKU",
+        "code": "HKU",
+        "name": "香港大學",
+        "en": "HKU",
+        "lat": 22.2839758,
+        "lng": 114.1355067,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KET",
+        "code": "KET",
+        "name": "堅尼地城",
+        "en": "Kennedy Town",
+        "lat": 22.2812252,
+        "lng": 114.1283812,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TIK",
+        "code": "TIK",
+        "name": "調景嶺",
+        "en": "Tiu Keng Leng",
+        "lat": 22.3040753,
+        "lng": 114.2523705,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-YAT",
+        "code": "YAT",
+        "name": "油塘",
+        "en": "Yau Tong",
+        "lat": 22.2977882,
+        "lng": 114.2371593,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LAT",
+        "code": "LAT",
+        "name": "藍田",
+        "en": "Lam Tin",
+        "lat": 22.307068518490453,
+        "lng": 114.23282404049114,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KWT",
+        "code": "KWT",
+        "name": "觀塘",
+        "en": "Kwun Tong",
+        "lat": 22.312326296462384,
+        "lng": 114.22658545062623,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-NTK",
+        "code": "NTK",
+        "name": "牛頭角",
+        "en": "Ngau Tau Kok",
+        "lat": 22.315741915598124,
+        "lng": 114.21906469087904,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KOB",
+        "code": "KOB",
+        "name": "九龍灣",
+        "en": "Kowloon Bay",
+        "lat": 22.323699034678548,
+        "lng": 114.2140876736694,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CHH",
+        "code": "CHH",
+        "name": "彩虹",
+        "en": "Choi Hung",
+        "lat": 22.334301836795074,
+        "lng": 114.20972220973832,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-DIH",
+        "code": "DIH",
+        "name": "鑽石山",
+        "en": "Diamond Hill",
+        "lat": 22.34027238550518,
+        "lng": 114.201734336427,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-WTS",
+        "code": "WTS",
+        "name": "黃大仙",
+        "en": "Wong Tai Sin",
+        "lat": 22.341916875003758,
+        "lng": 114.19395887961308,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LOF",
+        "code": "LOF",
+        "name": "樂富",
+        "en": "Lok Fu",
+        "lat": 22.3380228,
+        "lng": 114.187233,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SKM",
+        "code": "SKM",
+        "name": "石硤尾",
+        "en": "Shek Kip Mei",
+        "lat": 22.332028840419635,
+        "lng": 114.16890443353752,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-PRE",
+        "code": "PRE",
+        "name": "太子",
+        "en": "Prince Edward",
+        "lat": 22.3244547,
+        "lng": 114.1683017,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-MOK",
+        "code": "MOK",
+        "name": "旺角",
+        "en": "Mong Kok",
+        "lat": 22.319539569336,
+        "lng": 114.16943912131691,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-YMT",
+        "code": "YMT",
+        "name": "油麻地",
+        "en": "Yau Ma Tei",
+        "lat": 22.313073729779394,
+        "lng": 114.17074978792398,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HOM",
+        "code": "HOM",
+        "name": "何文田",
+        "en": "Ho Man Tin",
+        "lat": 22.309624174809343,
+        "lng": 114.18267778478582,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-WHA",
+        "code": "WHA",
+        "name": "黃埔",
+        "en": "Whampoa",
+        "lat": 22.305045285655662,
+        "lng": 114.19027664703273,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TUM",
+        "code": "TUM",
+        "name": "屯門",
+        "en": "Tuen Mun",
+        "lat": 22.3938221,
+        "lng": 113.973107,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SIH",
+        "code": "SIH",
+        "name": "兆康",
+        "en": "Siu Hong",
+        "lat": 22.4119912,
+        "lng": 113.9782568,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TIS",
+        "code": "TIS",
+        "name": "天水圍",
+        "en": "Tin Shui Wai",
+        "lat": 22.4493998,
+        "lng": 114.0060435,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LOP",
+        "code": "LOP",
+        "name": "朗屏",
+        "en": "Long Ping",
+        "lat": 22.447863266471522,
+        "lng": 114.02553401898207,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-YUL",
+        "code": "YUL",
+        "name": "元朗",
+        "en": "Yuen Long",
+        "lat": 22.4456518,
+        "lng": 114.0346405,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KSR",
+        "code": "KSR",
+        "name": "錦上路",
+        "en": "Kam Sheung Road",
+        "lat": 22.435369399647946,
+        "lng": 114.06326716549056,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TWW",
+        "code": "TWW",
+        "name": "荃灣西",
+        "en": "Tsuen Wan West",
+        "lat": 22.373757096229003,
+        "lng": 114.11816821042237,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-MEF",
+        "code": "MEF",
+        "name": "美孚",
+        "en": "Mei Foo",
+        "lat": 22.3379273,
+        "lng": 114.1391803,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-NAC",
+        "code": "NAC",
+        "name": "南昌",
+        "en": "Nam Cheong",
+        "lat": 22.3263553,
+        "lng": 114.1535827,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-AUS",
+        "code": "AUS",
+        "name": "柯士甸",
+        "en": "Austin",
+        "lat": 22.3042356,
+        "lng": 114.1666014,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-ETS",
+        "code": "ETS",
+        "name": "尖東",
+        "en": "East Tsim Sha Tsui",
+        "lat": 22.295561,
+        "lng": 114.1750721,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TKW",
+        "code": "TKW",
+        "name": "土瓜灣",
+        "en": "To Kwa Wan",
+        "lat": 22.3169748,
+        "lng": 114.1876486,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SUW",
+        "code": "SUW",
+        "name": "宋皇臺",
+        "en": "Sung Wong Toi",
+        "lat": 22.32721543888091,
+        "lng": 114.18977375971367,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KAT",
+        "code": "KAT",
+        "name": "啟德",
+        "en": "Kai Tak",
+        "lat": 22.33108846705651,
+        "lng": 114.20046123091848,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HIK",
+        "code": "HIK",
+        "name": "顯徑",
+        "en": "Hin Keng",
+        "lat": 22.363961012467012,
+        "lng": 114.17082462726536,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CKT",
+        "code": "CKT",
+        "name": "車公廟",
+        "en": "Che Kung Temple",
+        "lat": 22.37512277821308,
+        "lng": 114.18585482477452,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-STW",
+        "code": "STW",
+        "name": "沙田圍",
+        "en": "Sha Tin Wai",
+        "lat": 22.382365206184136,
+        "lng": 114.18700102152008,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CIO",
+        "code": "CIO",
+        "name": "第一城",
+        "en": "City One",
+        "lat": 22.383203309375588,
+        "lng": 114.20371265056374,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SHM",
+        "code": "SHM",
+        "name": "石門",
+        "en": "Shek Mun",
+        "lat": 22.388115076919117,
+        "lng": 114.20860774114679,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TSH",
+        "code": "TSH",
+        "name": "大水坑",
+        "en": "Tai Shui Hang",
+        "lat": 22.408430484682604,
+        "lng": 114.2226849979182,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HEO",
+        "code": "HEO",
+        "name": "恆安",
+        "en": "Heng On",
+        "lat": 22.418101209439115,
+        "lng": 114.22596126988702,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-MOS",
+        "code": "MOS",
+        "name": "馬鞍山",
+        "en": "Ma On Shan",
+        "lat": 22.425152107111597,
+        "lng": 114.23206361626559,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-WKS",
+        "code": "WKS",
+        "name": "烏溪沙",
+        "en": "Wu Kai Sha",
+        "lat": 22.429392059643423,
+        "lng": 114.24393525398546,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TUC",
+        "code": "TUC",
+        "name": "東涌",
+        "en": "Tung Chung",
+        "lat": 22.2892449,
+        "lng": 113.9413739,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LAK",
+        "code": "LAK",
+        "name": "茘景",
+        "en": "Lai King",
+        "lat": 22.34858275818523,
+        "lng": 114.12627552200134,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-OLY",
+        "code": "OLY",
+        "name": "奧運",
+        "en": "Olympic",
+        "lat": 22.318030692561962,
+        "lng": 114.16033510956295,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-POA",
+        "code": "POA",
+        "name": "寶琳",
+        "en": "Po Lam",
+        "lat": 22.322798485860663,
+        "lng": 114.25795947046682,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-HAH",
+        "code": "HAH",
+        "name": "坑口",
+        "en": "Hang Hau",
+        "lat": 22.3155713,
+        "lng": 114.2644401,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TKO",
+        "code": "TKO",
+        "name": "將軍澳",
+        "en": "Tseung Kwan O",
+        "lat": 22.307680213835365,
+        "lng": 114.26009575884972,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TSW",
+        "code": "TSW",
+        "name": "荃灣",
+        "en": "Tsuen Wan",
+        "lat": 22.3737381,
+        "lng": 114.117642,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TWH",
+        "code": "TWH",
+        "name": "大窩口",
+        "en": "Tai Wo Hau",
+        "lat": 22.416820268292373,
+        "lng": 114.07582159122579,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KWH",
+        "code": "KWH",
+        "name": "葵興",
+        "en": "Kwai Hing",
+        "lat": 22.363313134168973,
+        "lng": 114.13130899963792,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-KWF",
+        "code": "KWF",
+        "name": "葵芳",
+        "en": "Kwai Fong",
+        "lat": 22.35703586551868,
+        "lng": 114.12787428248461,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LCK",
+        "code": "LCK",
+        "name": "茘枝角",
+        "en": "Lai Chi Kok",
+        "lat": 22.3373962,
+        "lng": 114.1484136,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-CSW",
+        "code": "CSW",
+        "name": "長沙灣",
+        "en": "Cheung Sha Wan",
+        "lat": 22.3355066,
+        "lng": 114.1561596,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SSP",
+        "code": "SSP",
+        "name": "深水埗",
+        "en": "Sham Shui Po",
+        "lat": 22.331125245137677,
+        "lng": 114.16220681771735,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-JOR",
+        "code": "JOR",
+        "name": "佐敦",
+        "en": "Jordan",
+        "lat": 22.30575899212122,
+        "lng": 114.17193420764688,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-TST",
+        "code": "TST",
+        "name": "尖沙咀",
+        "en": "Tsim Sha Tsui",
+        "lat": 22.297938493755403,
+        "lng": 114.17226452874019,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-SOH",
+        "code": "SOH",
+        "name": "海怡半島",
+        "en": "South Horizons",
+        "lat": 22.24369785883269,
+        "lng": 114.14901426764916,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-LET",
+        "code": "LET",
+        "name": "利東",
+        "en": "Lei Tung",
+        "lat": 22.242082498584324,
+        "lng": 114.15608636811548,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-WCH",
+        "code": "WCH",
+        "name": "黃竹坑",
+        "en": "Wong Chuk Hang",
+        "lat": 22.2478643,
+        "lng": 114.1675119,
+        "mode": "heavy"
+      },
+      {
+        "id": "mtr-heavy-OCP",
+        "code": "OCP",
+        "name": "海洋公園",
+        "en": "Ocean Park",
+        "lat": 22.24893828158015,
+        "lng": 114.17441066397058,
+        "mode": "heavy"
+      }
+    ]
+  },
+  "light": {
+    "source": {
+      "status": "real",
+      "provider": "MTR Corporation / DATA.GOV.HK",
+      "actualSource": "https://opendata.mtr.com.hk/data/light_rail_routes_and_stops.csv",
+      "period": "monthly open-data snapshot",
+      "retrievedAt": "2026-10-20T13:15:01.056Z",
+      "note": "官方港鐵輕鐵路線及車站順序；MTR CSV 不提供坐標，快照优先按 OpenStreetMap 节点匹配，缺失坐标由 Lands Department Location Search API 补齐。 本地快照包含 68 个可绘制轻铁站点。"
+    },
+    "lines": [
+      {
+        "id": "mtr-light-505",
+        "code": "505",
+        "name": "505",
+        "en": "505",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-SAS",
+            "code": "SAS",
+            "name": "三聖",
+            "en": "Sam Shing",
+            "lat": 22.3825172,
+            "lng": 113.9766734,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SIL",
+            "code": "SIL",
+            "name": "兆麟",
+            "en": "Siu Lun",
+            "lat": 22.3845824,
+            "lng": 113.9750384,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-ONT",
+            "code": "ONT",
+            "name": "安定",
+            "en": "On Ting",
+            "lat": 22.3876044,
+            "lng": 113.9751,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOC",
+            "code": "TOC",
+            "name": "市中心",
+            "en": "Town Centre",
+            "lat": 22.3913803,
+            "lng": 113.974973,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TML",
+            "code": "TML",
+            "name": "屯門",
+            "en": "Tuen Mun",
+            "lat": 22.3938221,
+            "lng": 113.973107,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-KIO",
+            "code": "KIO",
+            "name": "建安",
+            "en": "Kin On",
+            "lat": 22.3951744,
+            "lng": 113.9689004,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SKS",
+            "code": "SKS",
+            "name": "山景(南)",
+            "en": "Shan King (South)",
+            "lat": 22.3966939,
+            "lng": 113.9660529,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SKN",
+            "code": "SKN",
+            "name": "山景(北)",
+            "en": "Shan King (North)",
+            "lat": 22.3984818,
+            "lng": 113.9666501,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHP",
+            "code": "SHP",
+            "name": "石排",
+            "en": "Shek Pai",
+            "lat": 22.401419,
+            "lng": 113.9677604,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SAW",
+            "code": "SAW",
+            "name": "新圍",
+            "en": "San Wai",
+            "lat": 22.4052485,
+            "lng": 113.9644776,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LEK",
+            "code": "LEK",
+            "name": "良景",
+            "en": "Leung King",
+            "lat": 22.4066682,
+            "lng": 113.9635777,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TNK",
+            "code": "TNK",
+            "name": "田景",
+            "en": "Tin King",
+            "lat": 22.4077765,
+            "lng": 113.9663998,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-KIS",
+            "code": "KIS",
+            "name": "建生",
+            "en": "Kin Sang",
+            "lat": 22.4067647,
+            "lng": 113.9691969,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHC",
+            "code": "CHC",
+            "name": "青松",
+            "en": "Ching Chung",
+            "lat": 22.4073257,
+            "lng": 113.972571,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-KEL",
+            "code": "KEL",
+            "name": "麒麟",
+            "en": "Kei Lun",
+            "lat": 22.4107151,
+            "lng": 113.9764566,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-507",
+        "code": "507",
+        "name": "507",
+        "en": "507",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-FEP",
+            "code": "FEP",
+            "name": "屯門碼頭",
+            "en": "Tuen Mun Ferry Pier",
+            "lat": 22.3725605,
+            "lng": 113.9664784,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHE",
+            "code": "SHE",
+            "name": "兆禧",
+            "en": "Siu Hei",
+            "lat": 22.3752391,
+            "lng": 113.9668753,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSP",
+            "code": "TSP",
+            "name": "海皇路",
+            "en": "Hoi Wong Road",
+            "lat": 22.381400831720683,
+            "lng": 113.97049154175173,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-GOG",
+            "code": "GOG",
+            "name": "豐景園",
+            "en": "Goodview Garden",
+            "lat": 22.3833066,
+            "lng": 113.973042,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SIL",
+            "code": "SIL",
+            "name": "兆麟",
+            "en": "Siu Lun",
+            "lat": 22.3845824,
+            "lng": 113.9750384,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-ONT",
+            "code": "ONT",
+            "name": "安定",
+            "en": "On Ting",
+            "lat": 22.3876044,
+            "lng": 113.9751,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOC",
+            "code": "TOC",
+            "name": "市中心",
+            "en": "Town Centre",
+            "lat": 22.3913803,
+            "lng": 113.974973,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TML",
+            "code": "TML",
+            "name": "屯門",
+            "en": "Tuen Mun",
+            "lat": 22.3938221,
+            "lng": 113.973107,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HOT",
+            "code": "HOT",
+            "name": "河田",
+            "en": "Ho Tin",
+            "lat": 22.3971066,
+            "lng": 113.9730527,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CYB",
+            "code": "CYB",
+            "name": "蔡意橋",
+            "en": "Choy Yee Bridge",
+            "lat": 22.4000751,
+            "lng": 113.9743456,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-NGW",
+            "code": "NGW",
+            "name": "銀圍",
+            "en": "Ngan Wai",
+            "lat": 22.4025158,
+            "lng": 113.9746126,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-THS",
+            "code": "THS",
+            "name": "大興(南)",
+            "en": "Tai Hing (South)",
+            "lat": 22.4027459,
+            "lng": 113.9719901,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-THN",
+            "code": "THN",
+            "name": "大興(北)",
+            "en": "Tai Hing (North)",
+            "lat": 22.4045507,
+            "lng": 113.9700954,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SAW",
+            "code": "SAW",
+            "name": "新圍",
+            "en": "San Wai",
+            "lat": 22.4052485,
+            "lng": 113.9644776,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LEK",
+            "code": "LEK",
+            "name": "良景",
+            "en": "Leung King",
+            "lat": 22.4066682,
+            "lng": 113.9635777,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TNK",
+            "code": "TNK",
+            "name": "田景",
+            "en": "Tin King",
+            "lat": 22.4077765,
+            "lng": 113.9663998,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-614P",
+        "code": "614P",
+        "name": "614P",
+        "en": "614P",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-FEP",
+            "code": "FEP",
+            "name": "屯門碼頭",
+            "en": "Tuen Mun Ferry Pier",
+            "lat": 22.3725605,
+            "lng": 113.9664784,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHE",
+            "code": "SHE",
+            "name": "兆禧",
+            "en": "Siu Hei",
+            "lat": 22.3752391,
+            "lng": 113.9668753,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSP",
+            "code": "TSP",
+            "name": "海皇路",
+            "en": "Hoi Wong Road",
+            "lat": 22.381400831720683,
+            "lng": 113.97049154175173,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-GOG",
+            "code": "GOG",
+            "name": "豐景園",
+            "en": "Goodview Garden",
+            "lat": 22.3833066,
+            "lng": 113.973042,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SIL",
+            "code": "SIL",
+            "name": "兆麟",
+            "en": "Siu Lun",
+            "lat": 22.3845824,
+            "lng": 113.9750384,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-ONT",
+            "code": "ONT",
+            "name": "安定",
+            "en": "On Ting",
+            "lat": 22.3876044,
+            "lng": 113.9751,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOC",
+            "code": "TOC",
+            "name": "市中心",
+            "en": "Town Centre",
+            "lat": 22.3913803,
+            "lng": 113.974973,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PUT",
+            "code": "PUT",
+            "name": "杯渡",
+            "en": "Pui To",
+            "lat": 22.3946674,
+            "lng": 113.9767232,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HFT",
+            "code": "HFT",
+            "name": "何福堂",
+            "en": "Hoh Fuk Tong",
+            "lat": 22.397437,
+            "lng": 113.9774708,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SAH",
+            "code": "SAH",
+            "name": "新墟",
+            "en": "San Hui",
+            "lat": 22.4002799,
+            "lng": 113.978045,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PRV",
+            "code": "PRV",
+            "name": "景峰",
+            "en": "Prime View",
+            "lat": 22.4031239,
+            "lng": 113.9795382,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-FUT",
+            "code": "FUT",
+            "name": "鳳地",
+            "en": "Fung Tei",
+            "lat": 22.4067811,
+            "lng": 113.9788053,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-615P",
+        "code": "615P",
+        "name": "615P",
+        "en": "615P",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-FEP",
+            "code": "FEP",
+            "name": "屯門碼頭",
+            "en": "Tuen Mun Ferry Pier",
+            "lat": 22.3725605,
+            "lng": 113.9664784,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-MEG",
+            "code": "MEG",
+            "name": "美樂",
+            "en": "Melody Garden",
+            "lat": 22.375073,
+            "lng": 113.9611989,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-BUT",
+            "code": "BUT",
+            "name": "蝴蝶",
+            "en": "Butterfly",
+            "lat": 22.378144,
+            "lng": 113.9617393,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LRD",
+            "code": "LRD",
+            "name": "輕鐵車廠",
+            "en": "Light Rail Depot",
+            "lat": 22.381827,
+            "lng": 113.9633725,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LUM",
+            "code": "LUM",
+            "name": "龍門",
+            "en": "Lung Mun",
+            "lat": 22.3852664,
+            "lng": 113.9650361,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSS",
+            "code": "TSS",
+            "name": "青山村",
+            "en": "Tsing Shan Tsuen",
+            "lat": 22.3906423,
+            "lng": 113.9671443,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWN",
+            "code": "TWN",
+            "name": "青雲",
+            "en": "Tsing Wun",
+            "lat": 22.3943554,
+            "lng": 113.9674614,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-MIK",
+            "code": "MIK",
+            "name": "鳴琴",
+            "en": "Ming Kum",
+            "lat": 22.3971502,
+            "lng": 113.9672954,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHP",
+            "code": "SHP",
+            "name": "石排",
+            "en": "Shek Pai",
+            "lat": 22.401419,
+            "lng": 113.9677604,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SAW",
+            "code": "SAW",
+            "name": "新圍",
+            "en": "San Wai",
+            "lat": 22.4052485,
+            "lng": 113.9644776,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LEK",
+            "code": "LEK",
+            "name": "良景",
+            "en": "Leung King",
+            "lat": 22.4066682,
+            "lng": 113.9635777,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TNK",
+            "code": "TNK",
+            "name": "田景",
+            "en": "Tin King",
+            "lat": 22.4077765,
+            "lng": 113.9663998,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-KIS",
+            "code": "KIS",
+            "name": "建生",
+            "en": "Kin Sang",
+            "lat": 22.4067647,
+            "lng": 113.9691969,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHC",
+            "code": "CHC",
+            "name": "青松",
+            "en": "Ching Chung",
+            "lat": 22.4073257,
+            "lng": 113.972571,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-KEL",
+            "code": "KEL",
+            "name": "麒麟",
+            "en": "Kei Lun",
+            "lat": 22.4107151,
+            "lng": 113.9764566,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-610",
+        "code": "610",
+        "name": "610",
+        "en": "610",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-FEP",
+            "code": "FEP",
+            "name": "屯門碼頭",
+            "en": "Tuen Mun Ferry Pier",
+            "lat": 22.3725605,
+            "lng": 113.9664784,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-MEG",
+            "code": "MEG",
+            "name": "美樂",
+            "en": "Melody Garden",
+            "lat": 22.375073,
+            "lng": 113.9611989,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-BUT",
+            "code": "BUT",
+            "name": "蝴蝶",
+            "en": "Butterfly",
+            "lat": 22.378144,
+            "lng": 113.9617393,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LRD",
+            "code": "LRD",
+            "name": "輕鐵車廠",
+            "en": "Light Rail Depot",
+            "lat": 22.381827,
+            "lng": 113.9633725,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LUM",
+            "code": "LUM",
+            "name": "龍門",
+            "en": "Lung Mun",
+            "lat": 22.3852664,
+            "lng": 113.9650361,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSS",
+            "code": "TSS",
+            "name": "青山村",
+            "en": "Tsing Shan Tsuen",
+            "lat": 22.3906423,
+            "lng": 113.9671443,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWN",
+            "code": "TWN",
+            "name": "青雲",
+            "en": "Tsing Wun",
+            "lat": 22.3943554,
+            "lng": 113.9674614,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-MIK",
+            "code": "MIK",
+            "name": "鳴琴",
+            "en": "Ming Kum",
+            "lat": 22.3971502,
+            "lng": 113.9672954,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHP",
+            "code": "SHP",
+            "name": "石排",
+            "en": "Shek Pai",
+            "lat": 22.401419,
+            "lng": 113.9677604,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-THN",
+            "code": "THN",
+            "name": "大興(北)",
+            "en": "Tai Hing (North)",
+            "lat": 22.4045507,
+            "lng": 113.9700954,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-THS",
+            "code": "THS",
+            "name": "大興(南)",
+            "en": "Tai Hing (South)",
+            "lat": 22.4027459,
+            "lng": 113.9719901,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-NGW",
+            "code": "NGW",
+            "name": "銀圍",
+            "en": "Ngan Wai",
+            "lat": 22.4025158,
+            "lng": 113.9746126,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-AFF",
+            "code": "AFF",
+            "name": "澤豐",
+            "en": "Affluence",
+            "lat": 22.4035304,
+            "lng": 113.9758783,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TMH",
+            "code": "TMH",
+            "name": "屯門醫院",
+            "en": "Tuen Mun Hospital",
+            "lat": 22.4078234,
+            "lng": 113.9771509,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LTE",
+            "code": "LTE",
+            "name": "藍地",
+            "en": "Lam Tei",
+            "lat": 22.4186987,
+            "lng": 113.981894,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-NAW",
+            "code": "NAW",
+            "name": "泥圍",
+            "en": "Nai Wai",
+            "lat": 22.4238581,
+            "lng": 113.9866093,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CUT",
+            "code": "CUT",
+            "name": "鍾屋村",
+            "en": "Chung Uk Tsuen",
+            "lat": 22.4296975,
+            "lng": 113.9922331,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HSK",
+            "code": "HSK",
+            "name": "洪水橋",
+            "en": "Hung Shui Kiu",
+            "lat": 22.4336604,
+            "lng": 113.9974787,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOF",
+            "code": "TOF",
+            "name": "塘坊村",
+            "en": "Tong Fong Tsuen",
+            "lat": 22.4402476,
+            "lng": 114.0074215,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PIS",
+            "code": "PIS",
+            "name": "屏山",
+            "en": "Ping Shan",
+            "lat": 22.44288,
+            "lng": 114.012039,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SPW",
+            "code": "SPW",
+            "name": "水邊圍",
+            "en": "Shui Pin Wai",
+            "lat": 22.4444798,
+            "lng": 114.0202344,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-FNR",
+            "code": "FNR",
+            "name": "豐年路",
+            "en": "Fung Nin Road",
+            "lat": 22.4445292,
+            "lng": 114.0238504,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HLR",
+            "code": "HLR",
+            "name": "康樂路",
+            "en": "Hong Lok Road",
+            "lat": 22.4445043,
+            "lng": 114.0269401,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TTR",
+            "code": "TTR",
+            "name": "大棠路",
+            "en": "Tai Tong Road",
+            "lat": 22.4444678,
+            "lng": 114.0295529,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-YLL",
+            "code": "YLL",
+            "name": "元朗",
+            "en": "Yuen Long",
+            "lat": 22.4456518,
+            "lng": 114.0346405,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-614",
+        "code": "614",
+        "name": "614",
+        "en": "614",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-FEP",
+            "code": "FEP",
+            "name": "屯門碼頭",
+            "en": "Tuen Mun Ferry Pier",
+            "lat": 22.3725605,
+            "lng": 113.9664784,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHE",
+            "code": "SHE",
+            "name": "兆禧",
+            "en": "Siu Hei",
+            "lat": 22.3752391,
+            "lng": 113.9668753,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSP",
+            "code": "TSP",
+            "name": "海皇路",
+            "en": "Hoi Wong Road",
+            "lat": 22.381400831720683,
+            "lng": 113.97049154175173,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-GOG",
+            "code": "GOG",
+            "name": "豐景園",
+            "en": "Goodview Garden",
+            "lat": 22.3833066,
+            "lng": 113.973042,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SIL",
+            "code": "SIL",
+            "name": "兆麟",
+            "en": "Siu Lun",
+            "lat": 22.3845824,
+            "lng": 113.9750384,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-ONT",
+            "code": "ONT",
+            "name": "安定",
+            "en": "On Ting",
+            "lat": 22.3876044,
+            "lng": 113.9751,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOC",
+            "code": "TOC",
+            "name": "市中心",
+            "en": "Town Centre",
+            "lat": 22.3913803,
+            "lng": 113.974973,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PUT",
+            "code": "PUT",
+            "name": "杯渡",
+            "en": "Pui To",
+            "lat": 22.3946674,
+            "lng": 113.9767232,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HFT",
+            "code": "HFT",
+            "name": "何福堂",
+            "en": "Hoh Fuk Tong",
+            "lat": 22.397437,
+            "lng": 113.9774708,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SAH",
+            "code": "SAH",
+            "name": "新墟",
+            "en": "San Hui",
+            "lat": 22.4002799,
+            "lng": 113.978045,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PRV",
+            "code": "PRV",
+            "name": "景峰",
+            "en": "Prime View",
+            "lat": 22.4031239,
+            "lng": 113.9795382,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-FUT",
+            "code": "FUT",
+            "name": "鳳地",
+            "en": "Fung Tei",
+            "lat": 22.4067811,
+            "lng": 113.9788053,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LTE",
+            "code": "LTE",
+            "name": "藍地",
+            "en": "Lam Tei",
+            "lat": 22.4186987,
+            "lng": 113.981894,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-NAW",
+            "code": "NAW",
+            "name": "泥圍",
+            "en": "Nai Wai",
+            "lat": 22.4238581,
+            "lng": 113.9866093,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CUT",
+            "code": "CUT",
+            "name": "鍾屋村",
+            "en": "Chung Uk Tsuen",
+            "lat": 22.4296975,
+            "lng": 113.9922331,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HSK",
+            "code": "HSK",
+            "name": "洪水橋",
+            "en": "Hung Shui Kiu",
+            "lat": 22.4336604,
+            "lng": 113.9974787,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOF",
+            "code": "TOF",
+            "name": "塘坊村",
+            "en": "Tong Fong Tsuen",
+            "lat": 22.4402476,
+            "lng": 114.0074215,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PIS",
+            "code": "PIS",
+            "name": "屏山",
+            "en": "Ping Shan",
+            "lat": 22.44288,
+            "lng": 114.012039,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SPW",
+            "code": "SPW",
+            "name": "水邊圍",
+            "en": "Shui Pin Wai",
+            "lat": 22.4444798,
+            "lng": 114.0202344,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-FNR",
+            "code": "FNR",
+            "name": "豐年路",
+            "en": "Fung Nin Road",
+            "lat": 22.4445292,
+            "lng": 114.0238504,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HLR",
+            "code": "HLR",
+            "name": "康樂路",
+            "en": "Hong Lok Road",
+            "lat": 22.4445043,
+            "lng": 114.0269401,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TTR",
+            "code": "TTR",
+            "name": "大棠路",
+            "en": "Tai Tong Road",
+            "lat": 22.4444678,
+            "lng": 114.0295529,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-YLL",
+            "code": "YLL",
+            "name": "元朗",
+            "en": "Yuen Long",
+            "lat": 22.4456518,
+            "lng": 114.0346405,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-615",
+        "code": "615",
+        "name": "615",
+        "en": "615",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-FEP",
+            "code": "FEP",
+            "name": "屯門碼頭",
+            "en": "Tuen Mun Ferry Pier",
+            "lat": 22.3725605,
+            "lng": 113.9664784,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-MEG",
+            "code": "MEG",
+            "name": "美樂",
+            "en": "Melody Garden",
+            "lat": 22.375073,
+            "lng": 113.9611989,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-BUT",
+            "code": "BUT",
+            "name": "蝴蝶",
+            "en": "Butterfly",
+            "lat": 22.378144,
+            "lng": 113.9617393,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LRD",
+            "code": "LRD",
+            "name": "輕鐵車廠",
+            "en": "Light Rail Depot",
+            "lat": 22.381827,
+            "lng": 113.9633725,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LUM",
+            "code": "LUM",
+            "name": "龍門",
+            "en": "Lung Mun",
+            "lat": 22.3852664,
+            "lng": 113.9650361,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSS",
+            "code": "TSS",
+            "name": "青山村",
+            "en": "Tsing Shan Tsuen",
+            "lat": 22.3906423,
+            "lng": 113.9671443,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWN",
+            "code": "TWN",
+            "name": "青雲",
+            "en": "Tsing Wun",
+            "lat": 22.3943554,
+            "lng": 113.9674614,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-MIK",
+            "code": "MIK",
+            "name": "鳴琴",
+            "en": "Ming Kum",
+            "lat": 22.3971502,
+            "lng": 113.9672954,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHP",
+            "code": "SHP",
+            "name": "石排",
+            "en": "Shek Pai",
+            "lat": 22.401419,
+            "lng": 113.9677604,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SAW",
+            "code": "SAW",
+            "name": "新圍",
+            "en": "San Wai",
+            "lat": 22.4052485,
+            "lng": 113.9644776,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LEK",
+            "code": "LEK",
+            "name": "良景",
+            "en": "Leung King",
+            "lat": 22.4066682,
+            "lng": 113.9635777,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TNK",
+            "code": "TNK",
+            "name": "田景",
+            "en": "Tin King",
+            "lat": 22.4077765,
+            "lng": 113.9663998,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-KIS",
+            "code": "KIS",
+            "name": "建生",
+            "en": "Kin Sang",
+            "lat": 22.4067647,
+            "lng": 113.9691969,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHC",
+            "code": "CHC",
+            "name": "青松",
+            "en": "Ching Chung",
+            "lat": 22.4073257,
+            "lng": 113.972571,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LTE",
+            "code": "LTE",
+            "name": "藍地",
+            "en": "Lam Tei",
+            "lat": 22.4186987,
+            "lng": 113.981894,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-NAW",
+            "code": "NAW",
+            "name": "泥圍",
+            "en": "Nai Wai",
+            "lat": 22.4238581,
+            "lng": 113.9866093,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CUT",
+            "code": "CUT",
+            "name": "鍾屋村",
+            "en": "Chung Uk Tsuen",
+            "lat": 22.4296975,
+            "lng": 113.9922331,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HSK",
+            "code": "HSK",
+            "name": "洪水橋",
+            "en": "Hung Shui Kiu",
+            "lat": 22.4336604,
+            "lng": 113.9974787,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOF",
+            "code": "TOF",
+            "name": "塘坊村",
+            "en": "Tong Fong Tsuen",
+            "lat": 22.4402476,
+            "lng": 114.0074215,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PIS",
+            "code": "PIS",
+            "name": "屏山",
+            "en": "Ping Shan",
+            "lat": 22.44288,
+            "lng": 114.012039,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SPW",
+            "code": "SPW",
+            "name": "水邊圍",
+            "en": "Shui Pin Wai",
+            "lat": 22.4444798,
+            "lng": 114.0202344,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-FNR",
+            "code": "FNR",
+            "name": "豐年路",
+            "en": "Fung Nin Road",
+            "lat": 22.4445292,
+            "lng": 114.0238504,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HLR",
+            "code": "HLR",
+            "name": "康樂路",
+            "en": "Hong Lok Road",
+            "lat": 22.4445043,
+            "lng": 114.0269401,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TTR",
+            "code": "TTR",
+            "name": "大棠路",
+            "en": "Tai Tong Road",
+            "lat": 22.4444678,
+            "lng": 114.0295529,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-YLL",
+            "code": "YLL",
+            "name": "元朗",
+            "en": "Yuen Long",
+            "lat": 22.4456518,
+            "lng": 114.0346405,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-705",
+        "code": "705",
+        "name": "705",
+        "en": "705",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-TSL",
+            "code": "TSL",
+            "name": "天水圍",
+            "en": "Tin Shui Wai",
+            "lat": 22.4493998,
+            "lng": 114.0060435,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TIT",
+            "code": "TIT",
+            "name": "天慈",
+            "en": "Tin Tsz",
+            "lat": 22.4527805,
+            "lng": 114.006033,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWU",
+            "code": "TWU",
+            "name": "天湖",
+            "en": "Tin Wu",
+            "lat": 22.4549666,
+            "lng": 114.0057041,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-GIN",
+            "code": "GIN",
+            "name": "銀座",
+            "en": "Ginza",
+            "lat": 22.4575312,
+            "lng": 114.0049838,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWI",
+            "code": "TWI",
+            "name": "天榮",
+            "en": "Tin Wing",
+            "lat": 22.4596764,
+            "lng": 114.0023185,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-706",
+        "code": "706",
+        "name": "706",
+        "en": "706",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-TSL",
+            "code": "TSL",
+            "name": "天水圍",
+            "en": "Tin Shui Wai",
+            "lat": 22.4493998,
+            "lng": 114.0060435,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TIY",
+            "code": "TIY",
+            "name": "天耀",
+            "en": "Tin Yiu",
+            "lat": 22.4503875,
+            "lng": 114.0027686,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LOC",
+            "code": "LOC",
+            "name": "樂湖",
+            "en": "Locwood",
+            "lat": 22.453036,
+            "lng": 114.0011415,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSU",
+            "code": "TSU",
+            "name": "天瑞",
+            "en": "Tin Shui",
+            "lat": 22.4559333,
+            "lng": 113.9993735,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHF",
+            "code": "CHF",
+            "name": "頌富",
+            "en": "Chung Fu",
+            "lat": 22.4620072,
+            "lng": 113.9969877,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TFU",
+            "code": "TFU",
+            "name": "天富",
+            "en": "Tin Fu",
+            "lat": 22.4645618,
+            "lng": 113.9976633,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TYA",
+            "code": "TYA",
+            "name": "天逸",
+            "en": "Tin Yat",
+            "lat": 22.4668889,
+            "lng": 113.9990556,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-THE",
+            "code": "THE",
+            "name": "天恒",
+            "en": "Tin Heng",
+            "lat": 22.4697292,
+            "lng": 114.0007557,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-WEP",
+            "code": "WEP",
+            "name": "濕地公園",
+            "en": "Wetland Park",
+            "lat": 22.4695484,
+            "lng": 114.0025345,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSA",
+            "code": "TSA",
+            "name": "天秀",
+            "en": "Tin Sau",
+            "lat": 22.4655398,
+            "lng": 114.0029634,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TYU",
+            "code": "TYU",
+            "name": "天悅",
+            "en": "Tin Yuet",
+            "lat": 22.4627134,
+            "lng": 114.0016156,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWI",
+            "code": "TWI",
+            "name": "天榮",
+            "en": "Tin Wing",
+            "lat": 22.4596764,
+            "lng": 114.0023185,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-751",
+        "code": "751",
+        "name": "751",
+        "en": "751",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-YAO",
+            "code": "YAO",
+            "name": "友愛",
+            "en": "Yau Oi",
+            "lat": 22.3866677,
+            "lng": 113.9735606,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-ONT",
+            "code": "ONT",
+            "name": "安定",
+            "en": "On Ting",
+            "lat": 22.3876044,
+            "lng": 113.9751,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOC",
+            "code": "TOC",
+            "name": "市中心",
+            "en": "Town Centre",
+            "lat": 22.3913803,
+            "lng": 113.974973,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TML",
+            "code": "TML",
+            "name": "屯門",
+            "en": "Tuen Mun",
+            "lat": 22.3938221,
+            "lng": 113.973107,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HOT",
+            "code": "HOT",
+            "name": "河田",
+            "en": "Ho Tin",
+            "lat": 22.3971066,
+            "lng": 113.9730527,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CYB",
+            "code": "CYB",
+            "name": "蔡意橋",
+            "en": "Choy Yee Bridge",
+            "lat": 22.4000751,
+            "lng": 113.9743456,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-AFF",
+            "code": "AFF",
+            "name": "澤豐",
+            "en": "Affluence",
+            "lat": 22.4035304,
+            "lng": 113.9758783,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TMH",
+            "code": "TMH",
+            "name": "屯門醫院",
+            "en": "Tuen Mun Hospital",
+            "lat": 22.4078234,
+            "lng": 113.9771509,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SHL",
+            "code": "SHL",
+            "name": "兆康",
+            "en": "Siu Hong",
+            "lat": 22.4119912,
+            "lng": 113.9782568,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LTE",
+            "code": "LTE",
+            "name": "藍地",
+            "en": "Lam Tei",
+            "lat": 22.4186987,
+            "lng": 113.981894,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-NAW",
+            "code": "NAW",
+            "name": "泥圍",
+            "en": "Nai Wai",
+            "lat": 22.4238581,
+            "lng": 113.9866093,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CUT",
+            "code": "CUT",
+            "name": "鍾屋村",
+            "en": "Chung Uk Tsuen",
+            "lat": 22.4296975,
+            "lng": 113.9922331,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HSK",
+            "code": "HSK",
+            "name": "洪水橋",
+            "en": "Hung Shui Kiu",
+            "lat": 22.4336604,
+            "lng": 113.9974787,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HMT",
+            "code": "HMT",
+            "name": "坑尾村",
+            "en": "Hang Mei Tsuen",
+            "lat": 22.4451439,
+            "lng": 114.0056157,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSL",
+            "code": "TSL",
+            "name": "天水圍",
+            "en": "Tin Shui Wai",
+            "lat": 22.4493998,
+            "lng": 114.0060435,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TIT",
+            "code": "TIT",
+            "name": "天慈",
+            "en": "Tin Tsz",
+            "lat": 22.4527805,
+            "lng": 114.006033,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWU",
+            "code": "TWU",
+            "name": "天湖",
+            "en": "Tin Wu",
+            "lat": 22.4549666,
+            "lng": 114.0057041,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-GIN",
+            "code": "GIN",
+            "name": "銀座",
+            "en": "Ginza",
+            "lat": 22.4575312,
+            "lng": 114.0049838,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TWI",
+            "code": "TWI",
+            "name": "天榮",
+            "en": "Tin Wing",
+            "lat": 22.4596764,
+            "lng": 114.0023185,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHE",
+            "code": "CHE",
+            "name": "翠湖",
+            "en": "Chestwood",
+            "lat": 22.4596928,
+            "lng": 113.9996008,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHF",
+            "code": "CHF",
+            "name": "頌富",
+            "en": "Chung Fu",
+            "lat": 22.4620072,
+            "lng": 113.9969877,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TFU",
+            "code": "TFU",
+            "name": "天富",
+            "en": "Tin Fu",
+            "lat": 22.4645618,
+            "lng": 113.9976633,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TYA",
+            "code": "TYA",
+            "name": "天逸",
+            "en": "Tin Yat",
+            "lat": 22.4668889,
+            "lng": 113.9990556,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TYA",
+            "code": "TYA",
+            "name": "天逸",
+            "en": "Tin Yat",
+            "lat": 22.4668889,
+            "lng": 113.9990556,
+            "mode": "light"
+          }
+        ]
+      },
+      {
+        "id": "mtr-light-761P",
+        "code": "761P",
+        "name": "761P",
+        "en": "761P",
+        "color": "#475569",
+        "mode": "light",
+        "stations": [
+          {
+            "id": "mtr-light-TYA",
+            "code": "TYA",
+            "name": "天逸",
+            "en": "Tin Yat",
+            "lat": 22.4668889,
+            "lng": 113.9990556,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TFU",
+            "code": "TFU",
+            "name": "天富",
+            "en": "Tin Fu",
+            "lat": 22.4645618,
+            "lng": 113.9976633,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-CHF",
+            "code": "CHF",
+            "name": "頌富",
+            "en": "Chung Fu",
+            "lat": 22.4620072,
+            "lng": 113.9969877,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TSU",
+            "code": "TSU",
+            "name": "天瑞",
+            "en": "Tin Shui",
+            "lat": 22.4559333,
+            "lng": 113.9993735,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-LOC",
+            "code": "LOC",
+            "name": "樂湖",
+            "en": "Locwood",
+            "lat": 22.453036,
+            "lng": 114.0011415,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TIY",
+            "code": "TIY",
+            "name": "天耀",
+            "en": "Tin Yiu",
+            "lat": 22.4503875,
+            "lng": 114.0027686,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HMT",
+            "code": "HMT",
+            "name": "坑尾村",
+            "en": "Hang Mei Tsuen",
+            "lat": 22.4451439,
+            "lng": 114.0056157,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TOF",
+            "code": "TOF",
+            "name": "塘坊村",
+            "en": "Tong Fong Tsuen",
+            "lat": 22.4402476,
+            "lng": 114.0074215,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-PIS",
+            "code": "PIS",
+            "name": "屏山",
+            "en": "Ping Shan",
+            "lat": 22.44288,
+            "lng": 114.012039,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-SPW",
+            "code": "SPW",
+            "name": "水邊圍",
+            "en": "Shui Pin Wai",
+            "lat": 22.4444798,
+            "lng": 114.0202344,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-FNR",
+            "code": "FNR",
+            "name": "豐年路",
+            "en": "Fung Nin Road",
+            "lat": 22.4445292,
+            "lng": 114.0238504,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-HLR",
+            "code": "HLR",
+            "name": "康樂路",
+            "en": "Hong Lok Road",
+            "lat": 22.4445043,
+            "lng": 114.0269401,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-TTR",
+            "code": "TTR",
+            "name": "大棠路",
+            "en": "Tai Tong Road",
+            "lat": 22.4444678,
+            "lng": 114.0295529,
+            "mode": "light"
+          },
+          {
+            "id": "mtr-light-YLL",
+            "code": "YLL",
+            "name": "元朗",
+            "en": "Yuen Long",
+            "lat": 22.4456518,
+            "lng": 114.0346405,
+            "mode": "light"
+          }
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "id": "mtr-light-SAS",
+        "code": "SAS",
+        "name": "三聖",
+        "en": "Sam Shing",
+        "lat": 22.3825172,
+        "lng": 113.9766734,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SIL",
+        "code": "SIL",
+        "name": "兆麟",
+        "en": "Siu Lun",
+        "lat": 22.3845824,
+        "lng": 113.9750384,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-ONT",
+        "code": "ONT",
+        "name": "安定",
+        "en": "On Ting",
+        "lat": 22.3876044,
+        "lng": 113.9751,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TOC",
+        "code": "TOC",
+        "name": "市中心",
+        "en": "Town Centre",
+        "lat": 22.3913803,
+        "lng": 113.974973,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TML",
+        "code": "TML",
+        "name": "屯門",
+        "en": "Tuen Mun",
+        "lat": 22.3938221,
+        "lng": 113.973107,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-KIO",
+        "code": "KIO",
+        "name": "建安",
+        "en": "Kin On",
+        "lat": 22.3951744,
+        "lng": 113.9689004,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SKS",
+        "code": "SKS",
+        "name": "山景(南)",
+        "en": "Shan King (South)",
+        "lat": 22.3966939,
+        "lng": 113.9660529,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SKN",
+        "code": "SKN",
+        "name": "山景(北)",
+        "en": "Shan King (North)",
+        "lat": 22.3984818,
+        "lng": 113.9666501,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SHP",
+        "code": "SHP",
+        "name": "石排",
+        "en": "Shek Pai",
+        "lat": 22.401419,
+        "lng": 113.9677604,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SAW",
+        "code": "SAW",
+        "name": "新圍",
+        "en": "San Wai",
+        "lat": 22.4052485,
+        "lng": 113.9644776,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-LEK",
+        "code": "LEK",
+        "name": "良景",
+        "en": "Leung King",
+        "lat": 22.4066682,
+        "lng": 113.9635777,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TNK",
+        "code": "TNK",
+        "name": "田景",
+        "en": "Tin King",
+        "lat": 22.4077765,
+        "lng": 113.9663998,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-KIS",
+        "code": "KIS",
+        "name": "建生",
+        "en": "Kin Sang",
+        "lat": 22.4067647,
+        "lng": 113.9691969,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-CHC",
+        "code": "CHC",
+        "name": "青松",
+        "en": "Ching Chung",
+        "lat": 22.4073257,
+        "lng": 113.972571,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-KEL",
+        "code": "KEL",
+        "name": "麒麟",
+        "en": "Kei Lun",
+        "lat": 22.4107151,
+        "lng": 113.9764566,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SHL",
+        "code": "SHL",
+        "name": "兆康",
+        "en": "Siu Hong",
+        "lat": 22.4119912,
+        "lng": 113.9782568,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-FEP",
+        "code": "FEP",
+        "name": "屯門碼頭",
+        "en": "Tuen Mun Ferry Pier",
+        "lat": 22.3725605,
+        "lng": 113.9664784,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SHE",
+        "code": "SHE",
+        "name": "兆禧",
+        "en": "Siu Hei",
+        "lat": 22.3752391,
+        "lng": 113.9668753,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TSP",
+        "code": "TSP",
+        "name": "海皇路",
+        "en": "Hoi Wong Road",
+        "lat": 22.381400831720683,
+        "lng": 113.97049154175173,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-GOG",
+        "code": "GOG",
+        "name": "豐景園",
+        "en": "Goodview Garden",
+        "lat": 22.3833066,
+        "lng": 113.973042,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-HOT",
+        "code": "HOT",
+        "name": "河田",
+        "en": "Ho Tin",
+        "lat": 22.3971066,
+        "lng": 113.9730527,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-CYB",
+        "code": "CYB",
+        "name": "蔡意橋",
+        "en": "Choy Yee Bridge",
+        "lat": 22.4000751,
+        "lng": 113.9743456,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-NGW",
+        "code": "NGW",
+        "name": "銀圍",
+        "en": "Ngan Wai",
+        "lat": 22.4025158,
+        "lng": 113.9746126,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-THS",
+        "code": "THS",
+        "name": "大興(南)",
+        "en": "Tai Hing (South)",
+        "lat": 22.4027459,
+        "lng": 113.9719901,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-THN",
+        "code": "THN",
+        "name": "大興(北)",
+        "en": "Tai Hing (North)",
+        "lat": 22.4045507,
+        "lng": 113.9700954,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-PUT",
+        "code": "PUT",
+        "name": "杯渡",
+        "en": "Pui To",
+        "lat": 22.3946674,
+        "lng": 113.9767232,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-HFT",
+        "code": "HFT",
+        "name": "何福堂",
+        "en": "Hoh Fuk Tong",
+        "lat": 22.397437,
+        "lng": 113.9774708,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SAH",
+        "code": "SAH",
+        "name": "新墟",
+        "en": "San Hui",
+        "lat": 22.4002799,
+        "lng": 113.978045,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-PRV",
+        "code": "PRV",
+        "name": "景峰",
+        "en": "Prime View",
+        "lat": 22.4031239,
+        "lng": 113.9795382,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-FUT",
+        "code": "FUT",
+        "name": "鳳地",
+        "en": "Fung Tei",
+        "lat": 22.4067811,
+        "lng": 113.9788053,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-MEG",
+        "code": "MEG",
+        "name": "美樂",
+        "en": "Melody Garden",
+        "lat": 22.375073,
+        "lng": 113.9611989,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-BUT",
+        "code": "BUT",
+        "name": "蝴蝶",
+        "en": "Butterfly",
+        "lat": 22.378144,
+        "lng": 113.9617393,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-LRD",
+        "code": "LRD",
+        "name": "輕鐵車廠",
+        "en": "Light Rail Depot",
+        "lat": 22.381827,
+        "lng": 113.9633725,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-LUM",
+        "code": "LUM",
+        "name": "龍門",
+        "en": "Lung Mun",
+        "lat": 22.3852664,
+        "lng": 113.9650361,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TSS",
+        "code": "TSS",
+        "name": "青山村",
+        "en": "Tsing Shan Tsuen",
+        "lat": 22.3906423,
+        "lng": 113.9671443,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TWN",
+        "code": "TWN",
+        "name": "青雲",
+        "en": "Tsing Wun",
+        "lat": 22.3943554,
+        "lng": 113.9674614,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-MIK",
+        "code": "MIK",
+        "name": "鳴琴",
+        "en": "Ming Kum",
+        "lat": 22.3971502,
+        "lng": 113.9672954,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-AFF",
+        "code": "AFF",
+        "name": "澤豐",
+        "en": "Affluence",
+        "lat": 22.4035304,
+        "lng": 113.9758783,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TMH",
+        "code": "TMH",
+        "name": "屯門醫院",
+        "en": "Tuen Mun Hospital",
+        "lat": 22.4078234,
+        "lng": 113.9771509,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-LTE",
+        "code": "LTE",
+        "name": "藍地",
+        "en": "Lam Tei",
+        "lat": 22.4186987,
+        "lng": 113.981894,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-NAW",
+        "code": "NAW",
+        "name": "泥圍",
+        "en": "Nai Wai",
+        "lat": 22.4238581,
+        "lng": 113.9866093,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-CUT",
+        "code": "CUT",
+        "name": "鍾屋村",
+        "en": "Chung Uk Tsuen",
+        "lat": 22.4296975,
+        "lng": 113.9922331,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-HSK",
+        "code": "HSK",
+        "name": "洪水橋",
+        "en": "Hung Shui Kiu",
+        "lat": 22.4336604,
+        "lng": 113.9974787,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TOF",
+        "code": "TOF",
+        "name": "塘坊村",
+        "en": "Tong Fong Tsuen",
+        "lat": 22.4402476,
+        "lng": 114.0074215,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-PIS",
+        "code": "PIS",
+        "name": "屏山",
+        "en": "Ping Shan",
+        "lat": 22.44288,
+        "lng": 114.012039,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-SPW",
+        "code": "SPW",
+        "name": "水邊圍",
+        "en": "Shui Pin Wai",
+        "lat": 22.4444798,
+        "lng": 114.0202344,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-FNR",
+        "code": "FNR",
+        "name": "豐年路",
+        "en": "Fung Nin Road",
+        "lat": 22.4445292,
+        "lng": 114.0238504,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-HLR",
+        "code": "HLR",
+        "name": "康樂路",
+        "en": "Hong Lok Road",
+        "lat": 22.4445043,
+        "lng": 114.0269401,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TTR",
+        "code": "TTR",
+        "name": "大棠路",
+        "en": "Tai Tong Road",
+        "lat": 22.4444678,
+        "lng": 114.0295529,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-YLL",
+        "code": "YLL",
+        "name": "元朗",
+        "en": "Yuen Long",
+        "lat": 22.4456518,
+        "lng": 114.0346405,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TSL",
+        "code": "TSL",
+        "name": "天水圍",
+        "en": "Tin Shui Wai",
+        "lat": 22.4493998,
+        "lng": 114.0060435,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TIT",
+        "code": "TIT",
+        "name": "天慈",
+        "en": "Tin Tsz",
+        "lat": 22.4527805,
+        "lng": 114.006033,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TWU",
+        "code": "TWU",
+        "name": "天湖",
+        "en": "Tin Wu",
+        "lat": 22.4549666,
+        "lng": 114.0057041,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-GIN",
+        "code": "GIN",
+        "name": "銀座",
+        "en": "Ginza",
+        "lat": 22.4575312,
+        "lng": 114.0049838,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TWI",
+        "code": "TWI",
+        "name": "天榮",
+        "en": "Tin Wing",
+        "lat": 22.4596764,
+        "lng": 114.0023185,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TIY",
+        "code": "TIY",
+        "name": "天耀",
+        "en": "Tin Yiu",
+        "lat": 22.4503875,
+        "lng": 114.0027686,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-LOC",
+        "code": "LOC",
+        "name": "樂湖",
+        "en": "Locwood",
+        "lat": 22.453036,
+        "lng": 114.0011415,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TSU",
+        "code": "TSU",
+        "name": "天瑞",
+        "en": "Tin Shui",
+        "lat": 22.4559333,
+        "lng": 113.9993735,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-CHF",
+        "code": "CHF",
+        "name": "頌富",
+        "en": "Chung Fu",
+        "lat": 22.4620072,
+        "lng": 113.9969877,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TFU",
+        "code": "TFU",
+        "name": "天富",
+        "en": "Tin Fu",
+        "lat": 22.4645618,
+        "lng": 113.9976633,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TYA",
+        "code": "TYA",
+        "name": "天逸",
+        "en": "Tin Yat",
+        "lat": 22.4668889,
+        "lng": 113.9990556,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-THE",
+        "code": "THE",
+        "name": "天恒",
+        "en": "Tin Heng",
+        "lat": 22.4697292,
+        "lng": 114.0007557,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-WEP",
+        "code": "WEP",
+        "name": "濕地公園",
+        "en": "Wetland Park",
+        "lat": 22.4695484,
+        "lng": 114.0025345,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TSA",
+        "code": "TSA",
+        "name": "天秀",
+        "en": "Tin Sau",
+        "lat": 22.4655398,
+        "lng": 114.0029634,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-TYU",
+        "code": "TYU",
+        "name": "天悅",
+        "en": "Tin Yuet",
+        "lat": 22.4627134,
+        "lng": 114.0016156,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-YAO",
+        "code": "YAO",
+        "name": "友愛",
+        "en": "Yau Oi",
+        "lat": 22.3866677,
+        "lng": 113.9735606,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-HMT",
+        "code": "HMT",
+        "name": "坑尾村",
+        "en": "Hang Mei Tsuen",
+        "lat": 22.4451439,
+        "lng": 114.0056157,
+        "mode": "light"
+      },
+      {
+        "id": "mtr-light-CHE",
+        "code": "CHE",
+        "name": "翠湖",
+        "en": "Chestwood",
+        "lat": 22.4596928,
+        "lng": 113.9996008,
+        "mode": "light"
+      }
+    ]
+  }
+}

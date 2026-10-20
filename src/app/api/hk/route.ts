@@ -1,36 +1,35 @@
 import { json } from "@/lib/hk-api";
-import {
-  HK_AREAS,
-  HK_LINES,
-  HK_MARKET_SOURCE,
-} from "@/lib/hk/skeleton";
-import {
-  HK_TPU_LAYER,
-  TPU_POPULATION_SOURCE,
-  totalPopulation,
-} from "@/lib/hk/population";
+import { HK_DISTRICTS, HK_PLANNING_UNITS } from "@/lib/hk/districts";
+import { HK_TPU_LAYER, TPU_POPULATION_SOURCE, totalPopulation } from "@/lib/hk/population";
+import { HK_TRANSIT } from "@/lib/hk/transit";
+import { HK_MARKET_SOURCE } from "@/lib/hk/skeleton";
+import manifest from "@/lib/hk/manifest.json";
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
-// 香港布局：商圈示意 + 港铁线路主干站点 + 真实 TPU 级别人口图层。
-// 商圈/港铁坐标仍为占位示意；人口为 2021 人口普查真实数据（TPU 级）。
 export function GET() {
-  const tot = totalPopulation();
+  const total = totalPopulation();
   return json({
     market: "HK",
     marker: HK_MARKET_SOURCE,
-    areas: HK_AREAS,
-    lines: HK_LINES,
     center: { lat: 22.3193, lng: 114.1694 },
-    population: {
-      source: TPU_POPULATION_SOURCE,
-      summary: {
-        total: tot.pop,
-        young: tot.young,
-        tpuCount: tot.tpus,
+    navigation: {
+      districts: HK_DISTRICTS,
+      planningUnits: HK_PLANNING_UNITS,
+      population: {
+        source: TPU_POPULATION_SOURCE,
+        summary: { total: total.pop, young: total.young, tpuCount: total.tpus },
+        layer: HK_TPU_LAYER,
       },
-      layer: HK_TPU_LAYER,
+    },
+    transit: HK_TRANSIT,
+    sources: manifest,
+    phase: {
+      browse: true,
+      lightPick: true,
+      analyzing: false,
+      note: "Phase 1 只支持地图浏览和可解释点选；不执行 Trade Area、评分、候选比较或客流推断。",
     },
   });
 }

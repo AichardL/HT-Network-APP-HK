@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-20T13:15:59.492Z",
+  "datasets": [
+    {
+      "id": "mtr-heavy-lines-stations",
+      "status": "real",
+      "provider": "MTR Corporation / DATA.GOV.HK",
+      "actualSource": "https://opendata.mtr.com.hk/data/mtr_lines_and_stations.csv",
+      "period": "monthly open-data snapshot",
+      "retrievedAt": "2026-10-20T13:15:01.056Z",
+      "note": "官方港鐵重鐵線路及車站順序；MTR CSV 不提供坐標，快照优先按 OpenStreetMap 节点匹配，缺失坐标由 Lands Department Location Search API 补齐。 本地快照包含 95 个可绘制重铁站点。",
+      "featureCount": 95,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "CSV header",
+          "sequence ordering",
+          "station dedupe",
+          "coordinate join"
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "mtr-light-routes-stops",
+      "status": "real",
+      "provider": "MTR Corporation / DATA.GOV.HK",
+      "actualSource": "https://opendata.mtr.com.hk/data/light_rail_routes_and_stops.csv",
+      "period": "monthly open-data snapshot",
+      "retrievedAt": "2026-10-20T13:15:01.056Z",
+      "note": "官方港鐵輕鐵路線及車站順序；MTR CSV 不提供坐標，快照优先按 OpenStreetMap 节点匹配，缺失坐标由 Lands Department Location Search API 补齐。 本地快照包含 68 个可绘制轻铁站点。",
+      "featureCount": 68,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "CSV header",
+          "sequence ordering",
+          "stop dedupe",
+          "coordinate join"
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "osm-mtr-station-coordinates",
+      "status": "real",
+      "provider": "OpenStreetMap contributors",
+      "actualSource": "https://overpass.kumi.systems/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A60%5D%3B(node%5Brailway~%22station%7Chalt%22%5D(22.1%2C113.8%2C22.6%2C114.5)%3B)%3Bout%20body%3B",
+      "period": "snapshot",
+      "retrievedAt": "2026-10-20T13:15:01.056Z",
+      "featureCount": 334,
+      "checksum": "46e73830df9b61aa019880a8bccefc9b5ddab05ca9ba9174728fe3c6e07ee331",
+      "validation": {
+        "passed": true,
+        "checks": [
+          "Hong Kong bbox",
+          "MTR/light-rail tag filter"
+        ]
+      }
+    },
+    {
+      "id": "csdi-districts",
+      "status": "real",
+      "provider": "CSDI / Census and Statistics Department",
+      "actualSource": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1635932856094_19982&format=geojson&layer_name=DC_21C",
+      "period": "2021 Population Census",
+      "retrievedAt": "2026-10-20T13:15:59.257Z",
+      "note": "18 District Council Districts; geometry normalized from CSDI GeoJSON and coordinates are WGS84.",
+      "featureCount": 18,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "18 district features",
+          "WGS84 geometry",
+          "population field"
+        ]
+      }
+    },
+    {
+      "id": "csdi-tpu-boundaries",
+      "status": "real",
+      "provider": "CSDI / Planning Department + C&SD",
+      "actualSource": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=pland_rcd_1634022783366_65050&format=geojson&layer_name=TPUSU_2021",
+      "period": "2021 Population Census",
+      "retrievedAt": "2026-10-20T13:15:59.259Z",
+      "note": "本地层以 292 个 TPU 边界作为地图统计粒度；PPU/SPU 通过 planning-lookup.json 关联，用于点位识别和聚合统计。",
+      "featureCount": 292,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "292 TPU features",
+          "WGS84 geometry",
+          "population join"
+        ]
+      }
+    },
+    {
+      "id": "csdi-planning-lookup",
+      "status": "real",
+      "provider": "CSDI / Planning Department + C&SD",
+      "actualSource": "https://portal.csdi.gov.hk/server/rest/services/common/pland_rcd_1634022783366_65050/FeatureServer/0/query",
+      "period": "2021 Population Census",
+      "retrievedAt": "2026-10-20T13:15:59.259Z",
+      "note": "每个 TPU 的 PPU/SPU 关系由 CSDI TPUSU_2021 属性对照，并以本地 2021 TPU 人口快照聚合。",
+      "featureCount": 292,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "PPU count",
+          "SPU count",
+          "TPU mapping",
+          "population aggregation"
+        ]
+      }
+    }
+  ]
+}

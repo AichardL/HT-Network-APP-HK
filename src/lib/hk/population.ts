@@ -1,10 +1,11 @@
 import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
-import type { HkArea } from "./skeleton";
+import type { SourceMeta } from "./provenance";
 
 // 香港真实人口图层：2021人口普查 LSG 聚合到 TPU(三级规划单元)，边界由规划署
 // TPUSBVC_2021 转换。status=real。无人区(郊野/离岛) pop=0、populated=false。
 // 数据来源：政府统计处 2021 人口普查 + 规划署 TPU 边界（EPSG:2326->WGS84）。
 import rawTpuGeo from "./tpu-population.json";
+import rawPlanningLookup from "./planning-lookup.json";
 
 export type HkTpuGeometry =
   | { type: "Polygon"; coordinates: number[][][] }
@@ -23,10 +24,12 @@ export type HkTpuFeature = {
   geometry: HkTpuGeometry;
 };
 
-export const TPU_POPULATION_SOURCE = {
+export const TPU_POPULATION_SOURCE: SourceMeta = {
   status: "real" as const,
+  provider: "Census and Statistics Department / Planning Department",
   actualSource: "2021 Population Census (C&SD) + TPU boundaries (Planning Department)",
-  sourceDate: "2021",
+  period: "2021 Population Census",
+  retrievedAt: "see snapshot manifest",
   note: "TPU级真实人口：由2021人口普查LSG聚合到三级规划单元(TPU)，边界经HK80->WGS84转换。无人区(郊野/离岛)人口为0。",
 };
 
@@ -34,6 +37,9 @@ export const HK_TPU_LAYER = rawTpuGeo as unknown as {
   type: "FeatureCollection";
   features: HkTpuFeature[];
 };
+
+type PlanningLookup = { tpu: number; spu: number; ppu: number; spuPopulation: number; ppuPopulation: number };
+const PLANNING_LOOKUP = rawPlanningLookup.items as PlanningLookup[];
 
 export function totalPopulation(): { pop: number; young: number; tpus: number } {
   let pop = 0;
@@ -47,7 +53,6 @@ export function totalPopulation(): { pop: number; young: number; tpus: number } 
   }
   return { pop, young, tpus };
 }
-
 // 找出 (lat,lng) 落在哪个 TPU；找不到返回 null（如离岛/水上/郊野无人口区）。
 export function findTpu(lat: number, lng: number): HkTpuFeature["properties"] | null {
   for (const f of HK_TPU_LAYER.features) {
@@ -64,6 +69,22 @@ export function findTpu(lat: number, lng: number): HkTpuFeature["properties"] | 
     }
   }
   return null;
+}
+
+export function findPlanning(lat: number, lng: number, level: "ppu" | "spu") {
+  const tpu = findTpu(lat, lng);
+  if (!tpu) return null;
+  const item = PLANNING_LOOKUP.find((candidate) => candidate.tpu === tpu.tpu);
+  if (!item) return null;
+  const id = level === "ppu" ? item.ppu : item.spu;
+  return {
+    id: String(id),
+    name: `${level.toUpperCase()} ${id}`,
+    en: `${level.toUpperCase()} ${id}`,
+    level,
+    population: level === "ppu" ? item.ppuPopulation : item.spuPopulation,
+    period: "2021 Population Census",
+  } as const;
 }
 
 function boundsOf(geo: HkTpuFeature["geometry"]): [number, number, number, number] {
@@ -86,9 +107,4 @@ function boundsOf(geo: HkTpuFeature["geometry"]): [number, number, number, numbe
     }
   }
   return [minX, minY, maxX, maxY];
-}
-
-// 给商圈关联最近 TPU 人口（用于商圈面板展示真实人口参考）。
-export function areaPopulation(a: HkArea): HkTpuFeature["properties"] | null {
-  return findTpu(a.center.lat, a.center.lng);
 }
