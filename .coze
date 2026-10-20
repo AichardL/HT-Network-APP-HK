@@ -5,6 +5,17 @@ requires = [ "nodejs-24" ]
 project_type = "web"
 version = ""
 
+[deploy]
+build = [ "bash", ".cozeproj/scripts/deploy_build.sh" ]
+run = [ "bash", ".cozeproj/scripts/deploy_run.sh" ]
+
+[deploy.profile]
+kind = "service"
+flavor = "web"
+
+[deploy.backend]
+enabled = true
+
 [dev]
 build = [ "bash", "./scripts/verify.sh" ]
 run = [ "bash", "./scripts/start.sh" ]
