@@ -1,0 +1,16 @@
+[project]
+sub_id = "6d57a868"
+name = "ht-network-hk-web"
+requires = [ "nodejs-24" ]
+project_type = "web"
+version = ""
+
+[dev]
+build = [ "bash", "./scripts/verify.sh" ]
+run = [ "bash", "./scripts/start.sh" ]
+
+[preview]
+preview_enable = "enabled"
+
+[subprojects]
+path = [ "." ]
