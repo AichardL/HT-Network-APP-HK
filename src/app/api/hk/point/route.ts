@@ -1,6 +1,6 @@
 import { json } from "@/lib/hk-api";
 import { findBoundary } from "@/lib/hk/districts";
-import { findPlanning, findTpu, nearbyPopulation, STPUG_POPULATION_SOURCE, TPU_POPULATION_SOURCE } from "@/lib/hk/population";
+import { findPlanning, findSsug, findTpu, nearbyPopulation, SSUG_POPULATION_SOURCE, STPUG_POPULATION_SOURCE, TPU_POPULATION_SOURCE } from "@/lib/hk/population";
 import { nearestStation } from "@/lib/hk/transit";
 
 export const runtime = "nodejs";
@@ -27,6 +27,7 @@ export function GET(req: Request) {
   const ppu = findPlanning(lat, lng, "ppu");
   const spu = findPlanning(lat, lng, "spu");
   const tpu = findTpu(lat, lng);
+  const ssug = findSsug(lat, lng);
   const station = nearestStation(lat, lng);
 
   return json({
@@ -36,6 +37,7 @@ export function GET(req: Request) {
       ppu,
       spu,
       tpu: tpu ? { id: String(tpu.tpu), name: `TPU ${tpu.tpu}`, level: "tpu", population: tpu.pop, period: "2021 Population Census" } : null,
+      ssug,
     },
     population: {
       estimate: tpu?.pop ?? null,
@@ -51,6 +53,7 @@ export function GET(req: Request) {
       ppu || spu ? { provider: "CSDI / Planning Department", status: "real", note: "PPU/SPU边界快照" } : { provider: "CSDI / Planning Department", status: "unavailable", note: "点位未落入本地规划单元快照" },
       { provider: "C&SD / Planning Department", status: "real", note: "TPU人口快照；不代表实时到访人口" },
       { provider: STPUG_POPULATION_SOURCE.provider, status: "real", note: STPUG_POPULATION_SOURCE.note },
+      { provider: SSUG_POPULATION_SOURCE.provider, status: "real", note: SSUG_POPULATION_SOURCE.note },
     ],
     phase: { mode: "light-pick", analysisEnabled: false, note: "Phase 1 不产生 Trade Area、评分、客流或选址结论。" },
   });

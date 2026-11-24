@@ -13,7 +13,7 @@ export type HkBoundaryFeature = {
     id: string;
     name: string;
     en: string;
-    level: "district" | "ppu" | "spu" | "tpu" | "mhe";
+    level: "district" | "ppu" | "spu" | "tpu" | "mhe" | "ssug";
     population: number | null;
     period: string;
   };

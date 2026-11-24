@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-24T06:43:40.336Z",
+  "generatedAt": "2026-11-24T15:22:54.216Z",
   "datasets": [
     {
       "id": "mtr-heavy-lines-stations",
@@ -148,6 +148,25 @@
           "211 STPUG profiles",
           "age-sex fields",
           "292 TPU-to-STPUG mappings"
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "csdi-small-subunit-groups",
+      "status": "real",
+      "provider": "Census and Statistics Department / CSDI",
+      "actualSource": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1635933365202_19171&format=geojson&layer_name=SSUG_21C",
+      "period": "2021 Population Census",
+      "retrievedAt": "2026-11-24T15:22:54.059Z",
+      "note": "官方 2,342 个单元区小合并组（Small Subunit Group）；人口字段为 2021 年常住人口。边界为地图展示用的轻量化快照，点位识别仍以该官方单元边界为准。",
+      "featureCount": 2342,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "2342 SSUG features",
+          "WGS84 geometry",
+          "2021 population field"
         ],
         "failures": []
       }

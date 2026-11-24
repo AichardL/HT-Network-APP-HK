@@ -10,6 +10,7 @@ const tpu = await readJson("src/lib/hk/tpu-population.json");
 const planningLookup = await readJson("src/lib/hk/planning-lookup.json");
 const mhe = await readJson("src/lib/hk/mhe-population.json");
 const stpug = await readJson("src/lib/hk/stpug-population.json");
+const ssug = await readJson("src/lib/hk/ssug-population.json");
 const failures = [];
 
 if (tpu.features?.length !== 292) failures.push(`TPU feature count expected 292, got ${tpu.features?.length ?? 0}`);
@@ -17,6 +18,8 @@ if (mhe.features?.length !== 540) failures.push(`MHE feature count expected 540,
 if (planningLookup.items?.length !== 292) failures.push(`planning lookup expected 292 TPU mappings, got ${planningLookup.items?.length ?? 0}`);
 if (stpug.features?.length !== 211) failures.push(`STPUG profile count expected 211, got ${stpug.features?.length ?? 0}`);
 if (Object.keys(stpug.tpuToStpug ?? {}).length !== 292) failures.push(`TPU-to-STPUG mapping expected 292 entries, got ${Object.keys(stpug.tpuToStpug ?? {}).length}`);
+if (ssug.features?.length !== 2342) failures.push(`SSUG feature count expected 2342, got ${ssug.features?.length ?? 0}`);
+if ((ssug.features ?? []).some((feature) => !feature.properties?.code || !Number.isFinite(feature.properties?.population))) failures.push("invalid SSUG code or population");
 for (const profile of stpug.features ?? []) {
   if (!profile.code || !Number.isFinite(profile.population) || !profile.ageSex?.male || !profile.ageSex?.female) failures.push(`invalid STPUG profile ${profile.code ?? "unknown"}`);
 }
@@ -40,4 +43,4 @@ if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
-console.log(`HK snapshot valid: ${transit.heavy.lines.length} heavy lines, ${transit.light.lines.length} light lines, ${tpu.features.length} TPU features.`);
+console.log(`HK snapshot valid: ${transit.heavy.lines.length} heavy lines, ${transit.light.lines.length} light lines, ${tpu.features.length} TPU features, ${ssug.features.length} SSUG features.`);

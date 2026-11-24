@@ -5,9 +5,9 @@
 ## 已实现
 
 - OSM 基础底图。
-- 18 区导航层，以及 CSDI / 2021 人口普查的 PPU、SPU、TPU 统计层级。
-- 2021 人口分区图层可在主要屋苑（540 个）、PPU（9 区）、SPU（52 区）、TPU（292 区）之间切换；PPU / SPU 边界由官方 TPU 边界和层级关系聚合生成，人口为所属 TPU 之和。
-- 点击任意港铁站点或地图点位后，会以该坐标自动查询 3 km 周边人口，并可切换 0.5 / 1 / 2 / 3 / 5 km；结果会明确列出所在 TPU 编码及纳入计算的 TPU 编码，并按 District / PPU / SPU / TPU 展开汇总。点位画像同时提供官方 STPUG 口径的总人口、男女、0–14 / 15–24 / 25–44 / 45–64 / 65+ 年龄段、15–24 岁女性和 15–44 岁女性指标，以及纳入画像的 STPUG 编码明细。
+- 18 区导航层，以及 CSDI / 2021 人口普查的 PPU、SPU、TPU、单元区（SSUG）统计层级。
+- 2021 人口分区图层可在主要屋苑（540 个）、PPU（9 区）、SPU（52 区）、TPU（292 区）、单元区小合并组（2,342 个）之间切换；PPU / SPU 边界由官方 TPU 边界和层级关系聚合生成，人口为所属 TPU 之和；单元区使用官方 SSUG 边界与人口字段。
+- 点击任意港铁站点或地图点位后，会以该坐标自动查询 3 km 周边人口，并可切换 0.5 / 1 / 2 / 3 / 5 km；结果会明确列出所在 TPU、单元区编码及纳入计算的 TPU / 单元区编码，并按 District / PPU / SPU / TPU / 单元区展开汇总。点位画像同时提供官方 STPUG 口径的总人口、男女、0–14 / 15–24 / 25–44 / 45–64 / 65+ 年龄段、15–24 岁女性和 15–44 岁女性指标，以及纳入画像的 STPUG 编码明细。
 - 港铁重铁、轻铁分开显示；线路和站点来自 MTR 官方开放 CSV。
 - 港铁站点坐标在同步期通过 Lands Department Location Search API / OpenStreetMap 进行对接，并在 manifest 中记录来源和校验结果。
 - 官方地址 / 地名搜索服务端代理：`GET /api/hk/search?q=...`。搜索只负责定位。
@@ -16,7 +16,7 @@
 ## API
 
 - `GET /api/hk`：地图边界、人口、重铁 / 轻铁、来源 manifest 和 Phase 1 能力边界。
-- `GET /api/hk/point?lat=...&lng=...&radiusKm=1`：识别 District / PPU / SPU / TPU、最近站点，返回指定半径内的 TPU 覆盖人口近似值和纳入计算的 TPU 编码，并返回 Excel-like 的 STPUG 年龄 × 性别人口画像。
+- `GET /api/hk/point?lat=...&lng=...&radiusKm=1`：识别 District / PPU / SPU / TPU / 单元区、最近站点，返回指定半径内的 TPU 与单元区人口近似值和纳入计算的编码，并返回 Excel-like 的 STPUG 年龄 × 性别人口画像。
 - `GET /api/hk/search?q=...`：服务端代理官方 Location Search API，并把 HK80 坐标转换为 WGS84。
 
 所有公开接口都是只读 GET；不接受写入、不保存用户位置、不需要登录。
@@ -26,7 +26,7 @@
 | 图层 | 来源 | 用途 |
 | --- | --- | --- |
 | 行政 / 规划边界 | [CSDI GeoSpatial Services](https://portal.csdi.gov.hk/csdi-webpage/doc/GeoSpatialServices)；CSDI file API 快照 | 地图叠加、空间层级识别 |
-| 人口 | [2021 Population Census](https://www.censtatd.gov.hk/en/data/stat_report/product/B1120110/att/B11201102021XXXXB0100.pdf)；[CSDI STPUG population dataset](https://data.gov.hk/en-data/dataset/hk-censtatd-census_geo-2021-population-census-by-stpu)；[Census 2021 IDDS age-sex table](https://www.census2021.gov.hk/data/table_S211D1/MDT_1_S211D1_RP_RP_NPER.csv)；[Major Housing Estates boundaries](https://portal.csdi.gov.hk/csdi-webpage/dataset/censtatd_rcd_1695182015782_79001) | District / 主要屋苑 / PPU / SPU / TPU 统计卡片、半径汇总，以及 STPUG 年龄 × 性别站点人口画像 |
+| 人口 | [2021 Population Census](https://www.censtatd.gov.hk/en/data/stat_report/product/B1120110/att/B11201102021XXXXB0100.pdf)；[CSDI Small Subunit Groups](https://data.gov.hk/en-data/dataset/hk-censtatd-census_geo-2021-population-census-by-ssg)；[CSDI STPUG population dataset](https://data.gov.hk/en-data/dataset/hk-censtatd-census_geo-2021-population-census-by-stpu)；[Census 2021 IDDS age-sex table](https://www.census2021.gov.hk/data/table_S211D1/MDT_1_S211D1_RP_RP_NPER.csv)；[Major Housing Estates boundaries](https://portal.csdi.gov.hk/csdi-webpage/dataset/censtatd_rcd_1695182015782_79001) | District / 主要屋苑 / PPU / SPU / TPU / 单元区统计卡片、半径汇总，以及 STPUG 年龄 × 性别站点人口画像 |
 | 重铁 / 轻铁 | [MTR routes, fares and barrier-free facilities](https://data.gov.hk/en-data/dataset/mtr-data-routes-fares-barrier-free-facilities) | 线路、站点顺序和站点卡片 |
 | 地址搜索 | [CSDI Location Search API](https://portal.csdi.gov.hk/csdi-webpage/apidoc/LocationSearchAPI) | 官方定位搜索 |
 | 基础底图 | [OpenStreetMap](https://www.openstreetmap.org/copyright) | OSM 地图底图和站点坐标冗余匹配 |

@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     template: '%s · HT Network HK',
   },
   description:
-    '香港门店选址工作台：2021 官方人口普查（TPU 级真实人口）、商圈示意、港铁线路与点位分析。',
-  keywords: ['香港选址', '门店网络规划', '2021人口普查', 'TPU', '茶饮', '港铁'],
+    '香港门店选址工作台：2021 官方人口普查（TPU / 单元区级真实人口）、商圈示意、港铁线路与点位分析。',
+  keywords: ['香港选址', '门店网络规划', '2021人口普查', 'TPU', '单元区', '茶饮', '港铁'],
   openGraph: {
     title: 'HT Network · 香港茶饮选址工作台',
     description:
-      '基于 2021 人口普查与规划署 TPU 边界的香港门店选址工作台，含真实人口图层、商圈示意与点位分析。',
+      '基于 2021 人口普查与官方 TPU / 单元区边界的香港门店选址工作台，含真实人口图层、商圈示意与点位分析。',
     type: 'website',
     locale: 'zh_HK',
     siteName: 'HT Network · HK',

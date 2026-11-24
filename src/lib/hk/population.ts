@@ -10,6 +10,7 @@ import rawTpuGeo from "./tpu-population.json";
 import rawPlanningLookup from "./planning-lookup.json";
 import rawMheGeo from "./mhe-population.json";
 import rawStpug from "./stpug-population.json";
+import rawSsug from "./ssug-population.json";
 
 export type HkTpuGeometry =
   | { type: "Polygon"; coordinates: number[][][] }
@@ -46,6 +47,15 @@ export const STPUG_POPULATION_SOURCE: SourceMeta = {
   note: "211 个 STPUG 小规划统计区小合并组；年龄 × 性别字段来自 Census 2021 IDDS，不能拆分回 292 个 TPU。",
 };
 
+export const SSUG_POPULATION_SOURCE: SourceMeta = {
+  status: "real" as const,
+  provider: "Census and Statistics Department / CSDI",
+  actualSource: "https://portal.csdi.gov.hk/csdi-webpage/dataset/censtatd_rcd_1635933365202_19171",
+  period: "2021 Population Census",
+  retrievedAt: "see snapshot manifest",
+  note: "2,342 个单元区小合并组（Small Subunit Group）；人口为 2021 年常住人口。",
+};
+
 export const HK_TPU_LAYER = rawTpuGeo as unknown as {
   type: "FeatureCollection";
   features: HkTpuFeature[];
@@ -72,6 +82,7 @@ const STPUG_BY_CODE = new Map(STPUG_PROFILES.map((profile) => [profile.code, pro
 const TPU_TO_STPUG = rawStpug.tpuToStpug as Record<string, string>;
 
 export type HkPopulationLevel = "district" | "ppu" | "spu" | "tpu" | "mhe";
+export type HkMapPopulationLevel = HkPopulationLevel | "ssug";
 export type HkPopulationLayer = { source: SourceMeta; features: HkBoundaryFeature[] };
 
 const TPU_BY_ID = new Map(HK_TPU_LAYER.features.map((feature) => [feature.properties.tpu, feature]));
@@ -162,12 +173,35 @@ const MHE_POPULATION_LAYER: HkPopulationLayer = {
   })),
 };
 
-export const HK_POPULATION_LAYERS: Record<HkPopulationLevel, HkPopulationLayer> = {
+type SsugFeature = {
+  type: "Feature";
+  properties: {
+    id: string;
+    code: string;
+    name: string;
+    en: string;
+    level: "ssug";
+    population: number;
+    parentTpu: number | null;
+    period: string;
+  };
+  geometry: HkBoundaryFeature["geometry"];
+  representativePoint: Coordinate;
+};
+
+const SSUG_LAYER = rawSsug as unknown as { source: SourceMeta; features: SsugFeature[] };
+const SSUG_POPULATION_LAYER: HkPopulationLayer = {
+  source: SSUG_POPULATION_SOURCE,
+  features: SSUG_LAYER.features.map((feature) => ({ type: feature.type, properties: feature.properties, geometry: feature.geometry })),
+};
+
+export const HK_POPULATION_LAYERS: Record<HkMapPopulationLevel, HkPopulationLayer> = {
   district: HK_DISTRICTS,
   ppu: aggregatePlanningLevel("ppu"),
   spu: aggregatePlanningLevel("spu"),
   tpu: TPU_BOUNDARY_LAYER,
   mhe: MHE_POPULATION_LAYER,
+  ssug: SSUG_POPULATION_LAYER,
 };
 
 export type NearbyPopulation = {
@@ -175,7 +209,10 @@ export type NearbyPopulation = {
   total: number;
   tpuCount: number;
   includedTpuCodes: string[];
-  breakdown: Record<HkPopulationLevel, { id: string; name: string; population: number }[]>;
+  subunitTotal: number;
+  ssugCount: number;
+  includedSsugCodes: string[];
+  breakdown: Record<HkMapPopulationLevel, { id: string; name: string; population: number }[]>;
   demographicProfile: PopulationProfile;
   note: string;
 };
@@ -285,12 +322,18 @@ export function nearbyPopulation(lat: number, lng: number, radiusKm: number): Ne
     const inside = booleanPointInPolygon([lng, lat], feature.geometry as never);
     return inside || distanceKm(point, representativePointOf(feature)) <= radius;
   });
-  const breakdownMaps: Record<HkPopulationLevel, Map<string, { id: string; name: string; population: number }>> = {
+  const subunitMatches = SSUG_LAYER.features.filter((feature) => {
+    if (feature.properties.population <= 0) return false;
+    const inside = booleanPointInPolygon([lng, lat], feature.geometry as never);
+    return inside || distanceKm(point, feature.representativePoint) <= radius;
+  });
+  const breakdownMaps: Record<HkMapPopulationLevel, Map<string, { id: string; name: string; population: number }>> = {
     district: new Map(),
     ppu: new Map(),
     spu: new Map(),
     tpu: new Map(),
     mhe: new Map(),
+    ssug: new Map(),
   };
 
   for (const feature of matches) {
@@ -313,6 +356,10 @@ export function nearbyPopulation(lat: number, lng: number, radiusKm: number): Ne
     }
   }
 
+  for (const feature of subunitMatches) {
+    addToBreakdown(breakdownMaps.ssug, feature.properties.id, feature.properties.name, feature.properties.population);
+  }
+
   const breakdown = Object.fromEntries(Object.entries(breakdownMaps).map(([level, values]) => [
     level,
     [...values.values()].sort((a, b) => b.population - a.population),
@@ -322,6 +369,9 @@ export function nearbyPopulation(lat: number, lng: number, radiusKm: number): Ne
     total: matches.reduce((sum, feature) => sum + feature.properties.pop, 0),
     tpuCount: matches.length,
     includedTpuCodes: matches.map((feature) => feature.properties.tpu).sort((a, b) => a - b).map(String),
+    subunitTotal: subunitMatches.reduce((sum, feature) => sum + feature.properties.population, 0),
+    ssugCount: subunitMatches.length,
+    includedSsugCodes: subunitMatches.map((feature) => feature.properties.code).sort(),
     breakdown,
     demographicProfile: buildDemographicProfile(lat, lng, radius),
     note: "数字名称为“周边 TPU 覆盖人口近似值”。按 2021 年常住人口统计；所在 TPU 直接计入，其他 TPU 按代表点落入半径计入，不代表圆形范围内的精确人口，也不代表实时到访人口。",
@@ -371,6 +421,15 @@ export function findTpu(lat: number, lng: number): HkTpuFeature["properties"] | 
     ) {
       return f.properties;
     }
+  }
+  return null;
+}
+
+export function findSsug(lat: number, lng: number): SsugFeature["properties"] | null {
+  for (const feature of SSUG_LAYER.features) {
+    const bounds = boundsOf(feature.geometry);
+    if (lng < bounds[0] || lng > bounds[2] || lat < bounds[1] || lat > bounds[3]) continue;
+    if (booleanPointInPolygon([lng, lat], feature.geometry as never)) return feature.properties;
   }
   return null;
 }

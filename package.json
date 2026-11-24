@@ -8,9 +8,10 @@
     "start": "next start",
     "lint": "eslint src",
     "ts-check": "tsc -p tsconfig.json --noEmit",
-    "sync:hk": "node scripts/sync-hk.mjs && node scripts/normalize-hk-geography.mjs && node scripts/normalize-hk-demographics.mjs",
+    "sync:hk": "node scripts/sync-hk.mjs && node scripts/normalize-hk-geography.mjs && node scripts/normalize-hk-demographics.mjs && node scripts/normalize-hk-subunits.mjs",
     "normalize:hk": "node scripts/normalize-hk-geography.mjs",
     "normalize:hk:demographics": "node scripts/normalize-hk-demographics.mjs",
+    "normalize:hk:subunits": "node scripts/normalize-hk-subunits.mjs",
     "validate:hk": "node scripts/validate-hk.mjs"
   },
   "dependencies": {

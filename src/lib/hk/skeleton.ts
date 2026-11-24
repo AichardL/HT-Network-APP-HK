@@ -3,7 +3,7 @@ import type { SourceMeta } from "./provenance";
 
 // Compatibility exports for the first HK page. There are deliberately no
 // manually-curated commercial areas in Phase 1: Districts are navigation, and
-// PPU/SPU/TPU are the official statistical hierarchy.
+// PPU/SPU/TPU/SSUG are the official statistical hierarchy.
 export { HK_LINES, HK_STATIONS };
 
 export type HkStation = (typeof HK_STATIONS)[number];
