@@ -65,14 +65,6 @@ export default function HkBoard() {
     fetch("/api/hk").then((response) => response.json()).then(setOverview).catch(() => setError("地图快照加载失败"));
   }, []);
 
-  const pick = useCallback((point: Coordinate) => {
-    setSelected(point);
-    setSelectedStation(null);
-    setSelectedBoundary(null);
-    setReport(null);
-    setError("");
-  }, []);
-
   const identifyPoint = useCallback(async (point: Coordinate, radius: number) => {
     setBusy(true);
     setError("");
@@ -88,6 +80,15 @@ export default function HkBoard() {
     }
   }, []);
 
+  const pick = useCallback((point: Coordinate) => {
+    setSelected(point);
+    setSelectedStation(null);
+    setSelectedBoundary(null);
+    setReport(null);
+    setError("");
+    void identifyPoint(point, radiusKm);
+  }, [identifyPoint, radiusKm]);
+
   const identify = useCallback(async () => {
     if (!selected) return;
     await identifyPoint(selected, radiusKm);
@@ -95,12 +96,10 @@ export default function HkBoard() {
 
   const changeRadius = useCallback((value: number) => {
     setRadiusKm(value);
-    if (selected && selectedStation) {
+    if (selected) {
       void identifyPoint(selected, value);
-    } else {
-      setReport(null);
     }
-  }, [identifyPoint, selected, selectedStation]);
+  }, [identifyPoint, selected]);
 
   const submitSearch = useCallback(async (event: React.FormEvent) => {
     event.preventDefault();
