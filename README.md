@@ -7,7 +7,7 @@
 - OSM 基础底图。
 - 18 区导航层，以及 CSDI / 2021 人口普查的 PPU、SPU、TPU 统计层级。
 - 2021 人口分区图层可在主要屋苑（540 个）、PPU（9 区）、SPU（52 区）、TPU（292 区）之间切换；PPU / SPU 边界由官方 TPU 边界和层级关系聚合生成，人口为所属 TPU 之和。
-- 点选任意位置后，可选择 0.5 / 1 / 2 / 3 km 半径查看“周边 TPU 覆盖人口近似值”，结果会明确列出所在 TPU 编码及纳入计算的 TPU 编码；并按 District / PPU / SPU 展开汇总。
+- 点击任意港铁站点后，会以站点坐标自动查询 3 km 周边人口，并可切换 0.5 / 1 / 2 / 3 / 5 km；结果会明确列出所在 TPU 编码及纳入计算的 TPU 编码，并按 District / PPU / SPU 展开汇总。点选任意非站点位置仍可手动识别。
 - 港铁重铁、轻铁分开显示；线路和站点来自 MTR 官方开放 CSV。
 - 港铁站点坐标在同步期通过 Lands Department Location Search API / OpenStreetMap 进行对接，并在 manifest 中记录来源和校验结果。
 - 官方地址 / 地名搜索服务端代理：`GET /api/hk/search?q=...`。搜索只负责定位。

@@ -58,7 +58,7 @@ export default function HkBoard() {
   const [showDistricts, setShowDistricts] = useState(true);
   const [showPopulation, setShowPopulation] = useState(false);
   const [populationLevel, setPopulationLevel] = useState<PopulationLevel>("tpu");
-  const [radiusKm, setRadiusKm] = useState(1);
+  const [radiusKm, setRadiusKm] = useState(3);
 
   useEffect(() => {
     fetch("/api/hk").then((response) => response.json()).then(setOverview).catch(() => setError("地图快照加载失败"));
@@ -72,12 +72,11 @@ export default function HkBoard() {
     setError("");
   }, []);
 
-  const identify = useCallback(async () => {
-    if (!selected) return;
+  const identifyPoint = useCallback(async (point: Coordinate, radius: number) => {
     setBusy(true);
     setError("");
     try {
-      const response = await fetch(`/api/hk/point?lat=${selected.lat}&lng=${selected.lng}&radiusKm=${radiusKm}`);
+      const response = await fetch(`/api/hk/point?lat=${point.lat}&lng=${point.lng}&radiusKm=${radius}`);
       const data = await response.json();
       if (!response.ok) throw new Error(data.error ?? "点位识别失败");
       setReport(data);
@@ -86,7 +85,21 @@ export default function HkBoard() {
     } finally {
       setBusy(false);
     }
-  }, [radiusKm, selected]);
+  }, []);
+
+  const identify = useCallback(async () => {
+    if (!selected) return;
+    await identifyPoint(selected, radiusKm);
+  }, [identifyPoint, radiusKm, selected]);
+
+  const changeRadius = useCallback((value: number) => {
+    setRadiusKm(value);
+    if (selected && selectedStation) {
+      void identifyPoint(selected, value);
+    } else {
+      setReport(null);
+    }
+  }, [identifyPoint, selected, selectedStation]);
 
   const submitSearch = useCallback(async (event: React.FormEvent) => {
     event.preventDefault();
@@ -149,8 +162,8 @@ export default function HkBoard() {
           <section className="rounded-lg border bg-card p-3">
             <h2 className="mb-2 text-sm font-semibold">当前点位</h2>
             {!selected && <p className="text-xs text-muted-foreground">点击地图或搜索结果，查看 District / PPU / SPU / TPU 和指定半径内的居民人口。</p>}
-            {selected && <div className="grid gap-2 text-xs"><p className="font-mono text-muted-foreground">{selected.lat.toFixed(6)}, {selected.lng.toFixed(6)}</p>{selectedStation && <div className="rounded-md bg-sky-50 p-2 text-sky-900"><p className="font-semibold">{selectedStation.name} <span className="font-normal">{selectedStation.en}</span></p><p>{selectedStation.mode === "heavy" ? "港铁重铁" : "港铁轻铁"} · {selectedStation.code}</p><p className="text-sky-700">线路和站点来自 MTR 官方开放数据；此卡片不含客流结论。</p></div>}<div className="rounded-md border bg-amber-50/70 p-2"><p className="mb-1 font-semibold text-amber-950">周边 TPU 覆盖人口近似值</p><div className="flex gap-1">{[0.5, 1, 2, 3].map((value) => <button key={value} type="button" onClick={() => { setRadiusKm(value); setReport(null); }} className={`rounded border px-2 py-1 ${radiusKm === value ? "border-amber-700 bg-amber-100 font-semibold" : "bg-white"}`}>{value} km</button>)}</div><p className="mt-1 text-[11px] text-amber-800">识别时按 2021 年常住人口，以 TPU 单元近似汇总；结果会列出纳入计算的 TPU 编码。</p></div><Button size="sm" onClick={identify} disabled={busy}>{busy ? "识别中…" : "识别此位置"}</Button><Button size="sm" variant="ghost" onClick={() => { setSelected(null); setSelectedStation(null); setReport(null); }}>清除</Button></div>}
-            {report && <PointCard report={report} />}
+            {selected && <div className="grid gap-2 text-xs"><p className="font-mono text-muted-foreground">{selected.lat.toFixed(6)}, {selected.lng.toFixed(6)}</p>{selectedStation && <div className="rounded-md bg-sky-50 p-2 text-sky-900"><p className="font-semibold">{selectedStation.name} <span className="font-normal">{selectedStation.en}</span></p><p>{selectedStation.mode === "heavy" ? "港铁重铁" : "港铁轻铁"} · {selectedStation.code}</p><p className="text-sky-700">线路和站点来自 MTR 官方开放数据；点击站点后已自动查询周边人口。</p></div>}<div className="rounded-md border bg-amber-50/70 p-2"><p className="mb-1 font-semibold text-amber-950">{selectedStation ? "站点周边人口查询半径" : "周边 TPU 覆盖人口近似值"}</p><div className="flex flex-wrap gap-1">{[0.5, 1, 2, 3, 5].map((value) => <button key={value} type="button" onClick={() => changeRadius(value)} className={`rounded border px-2 py-1 ${radiusKm === value ? "border-amber-700 bg-amber-100 font-semibold" : "bg-white"}`}>{value} km</button>)}</div><p className="mt-1 text-[11px] text-amber-800">{selectedStation ? `以 ${selectedStation.name} 站点坐标自动汇总 2021 年常住人口；切换半径会自动更新。` : "识别时按 2021 年常住人口，以 TPU 单元近似汇总；结果会列出纳入计算的 TPU 编码。"}</p></div><Button size="sm" onClick={identify} disabled={busy}>{busy ? "识别中…" : "识别此位置"}</Button><Button size="sm" variant="ghost" onClick={() => { setSelected(null); setSelectedStation(null); setReport(null); }}>清除</Button></div>}
+            {report && <PointCard report={report} station={selectedStation} />}
             {selectedBoundary && <BoundaryCard feature={selectedBoundary} />}
             {error && <p className="mt-2 text-xs text-red-600">{error}</p>}
           </section>
@@ -167,7 +180,7 @@ export default function HkBoard() {
             {showPopulation && activePopulationFeatures.map((feature) => <BoundaryPolygons key={feature.properties.id} feature={feature} selected={selectedBoundary?.id === feature.properties.id} onSelect={setSelectedBoundary} population />)}
             {showHeavy && heavyLines.map((line) => <Polyline key={line.id} positions={line.stations.map((station) => [station.lat, station.lng] as [number, number])} pathOptions={{ color: line.color, weight: 4, opacity: 0.9 }} />)}
             {showLight && lightLines.map((line) => <Polyline key={line.id} positions={line.stations.map((station) => [station.lat, station.lng] as [number, number])} pathOptions={{ color: line.color, weight: 3, opacity: 0.75, dashArray: "4 4" }} />)}
-            {(showHeavy || showLight) && stations.map((station) => ((station.mode === "heavy" ? showHeavy : showLight) ? <CircleMarker key={station.id} center={[station.lat, station.lng]} radius={5} pathOptions={{ color: "#fff", weight: 1.5, fillColor: station.mode === "heavy" ? "#0f172a" : "#f97316", fillOpacity: 1 }} eventHandlers={{ click: () => { pick(station); setSelectedStation(station); } }} /> : null))}
+            {(showHeavy || showLight) && stations.map((station) => ((station.mode === "heavy" ? showHeavy : showLight) ? <CircleMarker key={station.id} center={[station.lat, station.lng]} radius={5} pathOptions={{ color: "#fff", weight: 1.5, fillColor: station.mode === "heavy" ? "#0f172a" : "#f97316", fillOpacity: 1 }} eventHandlers={{ click: () => { pick(station); setSelectedStation(station); void identifyPoint(station, radiusKm); } }} /> : null))}
             {selectedStation && <CircleMarker center={[selectedStation.lat, selectedStation.lng]} radius={8} pathOptions={{ color: "#0f172a", weight: 3, fillColor: "#38bdf8", fillOpacity: 1 }} />}
             {selected && <CircleMarker center={[selected.lat, selected.lng]} radius={6} pathOptions={{ color: "#fff", weight: 2, fillColor: "#b91c1c", fillOpacity: 1 }} />}
             {selected && <Circle center={[selected.lat, selected.lng]} radius={radiusKm * 1000} pathOptions={{ color: "#b45309", weight: 1.5, dashArray: "5 5", fillColor: "#f59e0b", fillOpacity: 0.05 }} />}
@@ -201,9 +214,9 @@ function BoundaryCard({ feature }: { feature: HkBoundaryFeature["properties"] })
   return <div className="mt-2 rounded-md bg-muted/50 p-2 text-xs"><p className="font-semibold">{feature.name} <span className="font-normal text-muted-foreground">{feature.en}</span></p><p>层级：{feature.level.toUpperCase()} · 统计期：{feature.period}</p>{feature.population != null && <p>人口：{feature.population.toLocaleString()}（不代表实时到访）</p>}</div>;
 }
 
-function PointCard({ report }: { report: PointPayload }) {
+function PointCard({ report, station }: { report: PointPayload; station: HkStation | null }) {
   const { district, ppu, spu, tpu } = report.hierarchy;
-  return <div className="mt-2 grid gap-2 text-xs"><div className="rounded-md bg-muted/50 p-2"><p className="font-semibold">空间层级</p><p>District：{district?.name ?? "unavailable"}</p><p>PPU：{ppu?.name ?? "unavailable"}</p><p>SPU：{spu?.name ?? "unavailable"}</p><p>所在 TPU 编码：{tpu ? `${tpu.id} · ${tpu.population.toLocaleString()} 人` : "unavailable"}</p></div><div className="rounded-md bg-emerald-50 p-2 text-emerald-950"><p className="font-semibold">周边 {report.nearbyPopulation.radiusKm} km TPU 覆盖人口近似值</p><p className="mt-0.5 text-lg font-semibold tabular-nums">{report.nearbyPopulation.total.toLocaleString()} 人</p><p className="text-[11px] text-emerald-800">纳入 {report.nearbyPopulation.tpuCount} 个 TPU · {report.nearbyPopulation.note}</p><NearbyBreakdown nearby={report.nearbyPopulation} /></div><div className="rounded-md bg-muted/50 p-2"><p className="font-semibold">所在单元人口</p><p>{report.population.estimate?.toLocaleString() ?? "unavailable"} · 2021 常住人口</p><p>{report.population.note}</p></div><div className="rounded-md bg-muted/50 p-2"><p className="font-semibold">附近站点</p><p>{report.nearestStation ? `${report.nearestStation.name} · ${report.nearestStation.distanceKm.toFixed(2)} km` : "unavailable"}</p></div></div>;
+  return <div className="mt-2 grid gap-2 text-xs"><div className="rounded-md bg-muted/50 p-2"><p className="font-semibold">空间层级</p><p>District：{district?.name ?? "unavailable"}</p><p>PPU：{ppu?.name ?? "unavailable"}</p><p>SPU：{spu?.name ?? "unavailable"}</p><p>所在 TPU 编码：{tpu ? `${tpu.id} · ${tpu.population.toLocaleString()} 人` : "unavailable"}</p></div><div className="rounded-md bg-emerald-50 p-2 text-emerald-950"><p className="font-semibold">{station ? "站点周边" : "周边"} {report.nearbyPopulation.radiusKm} km TPU 覆盖人口近似值</p><p className="mt-0.5 text-lg font-semibold tabular-nums">{report.nearbyPopulation.total.toLocaleString()} 人</p><p className="text-[11px] text-emerald-800">纳入 {report.nearbyPopulation.tpuCount} 个 TPU · {report.nearbyPopulation.note}</p><NearbyBreakdown nearby={report.nearbyPopulation} /></div><div className="rounded-md bg-muted/50 p-2"><p className="font-semibold">所在单元人口</p><p>{report.population.estimate?.toLocaleString() ?? "unavailable"} · 2021 常住人口</p><p>{report.population.note}</p></div><div className="rounded-md bg-muted/50 p-2"><p className="font-semibold">附近站点</p><p>{report.nearestStation ? `${report.nearestStation.name} · ${report.nearestStation.distanceKm.toFixed(2)} km` : "unavailable"}</p></div></div>;
 }
 
 function NearbyBreakdown({ nearby }: { nearby: NearbyPopulation }) {
