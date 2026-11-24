@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T13:15:59.492Z",
+  "generatedAt": "2026-11-24T06:43:40.336Z",
   "datasets": [
     {
       "id": "mtr-heavy-lines-stations",
@@ -129,6 +129,25 @@
           "540 major housing estate features",
           "WGS84 geometry",
           "population field"
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "csdi-stpug-demographics",
+      "status": "real",
+      "provider": "CSDI / Census and Statistics Department",
+      "actualSource": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1635933193720_58660&format=geojson&layer_name=STPUG_21C",
+      "period": "2021 Population Census",
+      "retrievedAt": "2026-11-24T06:43:40.341Z",
+      "note": "211 个 STPUG 小规划统计区小合并组；人口、年龄、性别和 TPU 对照用于站点人口画像。",
+      "featureCount": 211,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "211 STPUG profiles",
+          "age-sex fields",
+          "292 TPU-to-STPUG mappings"
         ],
         "failures": []
       }

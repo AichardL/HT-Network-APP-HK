@@ -1,6 +1,6 @@
 import { json } from "@/lib/hk-api";
 import { findBoundary } from "@/lib/hk/districts";
-import { findPlanning, findTpu, nearbyPopulation, TPU_POPULATION_SOURCE } from "@/lib/hk/population";
+import { findPlanning, findTpu, nearbyPopulation, STPUG_POPULATION_SOURCE, TPU_POPULATION_SOURCE } from "@/lib/hk/population";
 import { nearestStation } from "@/lib/hk/transit";
 
 export const runtime = "nodejs";
@@ -50,6 +50,7 @@ export function GET(req: Request) {
       district ? { provider: "CSDI / Census and Statistics Department", status: "real", note: "2021区议会区边界快照" } : { provider: "CSDI / Census and Statistics Department", status: "unavailable", note: "点位未落入本地区界快照" },
       ppu || spu ? { provider: "CSDI / Planning Department", status: "real", note: "PPU/SPU边界快照" } : { provider: "CSDI / Planning Department", status: "unavailable", note: "点位未落入本地规划单元快照" },
       { provider: "C&SD / Planning Department", status: "real", note: "TPU人口快照；不代表实时到访人口" },
+      { provider: STPUG_POPULATION_SOURCE.provider, status: "real", note: STPUG_POPULATION_SOURCE.note },
     ],
     phase: { mode: "light-pick", analysisEnabled: false, note: "Phase 1 不产生 Trade Area、评分、客流或选址结论。" },
   });

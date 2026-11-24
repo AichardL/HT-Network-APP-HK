@@ -9,6 +9,7 @@ import type { Coordinate } from "../geo";
 import rawTpuGeo from "./tpu-population.json";
 import rawPlanningLookup from "./planning-lookup.json";
 import rawMheGeo from "./mhe-population.json";
+import rawStpug from "./stpug-population.json";
 
 export type HkTpuGeometry =
   | { type: "Polygon"; coordinates: number[][][] }
@@ -36,6 +37,15 @@ export const TPU_POPULATION_SOURCE: SourceMeta = {
   note: "TPU级真实人口：由2021人口普查LSG聚合到三级规划单元(TPU)，边界经HK80->WGS84转换。无人区(郊野/离岛)人口为0。",
 };
 
+export const STPUG_POPULATION_SOURCE: SourceMeta = {
+  status: "real" as const,
+  provider: "Census and Statistics Department / CSDI",
+  actualSource: "https://portal.csdi.gov.hk/csdi-webpage/dataset/censtatd_rcd_1635933193720_58660",
+  period: "2021 Population Census",
+  retrievedAt: "see snapshot manifest",
+  note: "211 个 STPUG 小规划统计区小合并组；年龄 × 性别字段来自 Census 2021 IDDS，不能拆分回 292 个 TPU。",
+};
+
 export const HK_TPU_LAYER = rawTpuGeo as unknown as {
   type: "FeatureCollection";
   features: HkTpuFeature[];
@@ -43,6 +53,23 @@ export const HK_TPU_LAYER = rawTpuGeo as unknown as {
 
 type PlanningLookup = { tpu: number; spu: number; ppu: number; spuPopulation: number; ppuPopulation: number };
 const PLANNING_LOOKUP = rawPlanningLookup.items as PlanningLookup[];
+type AgeBand = "0-14" | "15-24" | "25-44" | "45-64" | "65+";
+const AGE_BANDS: AgeBand[] = ["0-14", "15-24", "25-44", "45-64", "65+"];
+type StpugProfile = {
+  code: string;
+  name: string;
+  en: string;
+  population: number;
+  male: number;
+  female: number;
+  age: Record<AgeBand, number>;
+  ageSex: { male: Record<AgeBand, number>; female: Record<AgeBand, number> };
+  representativePoint: Coordinate;
+  tpuCodes: number[];
+};
+const STPUG_PROFILES = rawStpug.features as StpugProfile[];
+const STPUG_BY_CODE = new Map(STPUG_PROFILES.map((profile) => [profile.code, profile]));
+const TPU_TO_STPUG = rawStpug.tpuToStpug as Record<string, string>;
 
 export type HkPopulationLevel = "district" | "ppu" | "spu" | "tpu" | "mhe";
 export type HkPopulationLayer = { source: SourceMeta; features: HkBoundaryFeature[] };
@@ -149,6 +176,19 @@ export type NearbyPopulation = {
   tpuCount: number;
   includedTpuCodes: string[];
   breakdown: Record<HkPopulationLevel, { id: string; name: string; population: number }[]>;
+  demographicProfile: PopulationProfile;
+  note: string;
+};
+
+export type PopulationProfile = {
+  total: number;
+  male: number;
+  female: number;
+  female15to24: number;
+  female15to44: number;
+  ageBreakdown: { band: AgeBand; male: number; female: number; total: number }[];
+  includedStpugCodes: string[];
+  units: { code: string; name: string; population: number; male: number; female: number; female15to24: number; female15to44: number }[];
   note: string;
 };
 
@@ -194,6 +234,47 @@ function addToBreakdown(
   const current = target.get(id);
   if (current) current.population += population;
   else target.set(id, { id, name, population });
+}
+
+function sumAgeBands(values: Record<AgeBand, number>, bands: AgeBand[]) {
+  return bands.reduce((sum, band) => sum + (values[band] ?? 0), 0);
+}
+
+function buildDemographicProfile(lat: number, lng: number, radius: number): PopulationProfile {
+  const point = { lat, lng };
+  const selectedCodes = new Set<string>();
+  const pointTpu = findTpu(lat, lng);
+  const pointStpug = pointTpu ? TPU_TO_STPUG[String(pointTpu.tpu)] : undefined;
+  for (const profile of STPUG_PROFILES) {
+    if (profile.code === pointStpug || distanceKm(point, profile.representativePoint) <= radius) selectedCodes.add(profile.code);
+  }
+
+  const selected = [...selectedCodes].map((code) => STPUG_BY_CODE.get(code)).filter((profile): profile is StpugProfile => Boolean(profile));
+  const ageBreakdown = AGE_BANDS.map((band) => {
+    const male = selected.reduce((sum, profile) => sum + profile.ageSex.male[band], 0);
+    const female = selected.reduce((sum, profile) => sum + profile.ageSex.female[band], 0);
+    return { band, male, female, total: male + female };
+  });
+  const units = selected.map((profile) => ({
+    code: profile.code,
+    name: profile.name,
+    population: profile.population,
+    male: profile.male,
+    female: profile.female,
+    female15to24: profile.ageSex.female["15-24"],
+    female15to44: sumAgeBands(profile.ageSex.female, ["15-24", "25-44"]),
+  })).sort((a, b) => b.population - a.population);
+  return {
+    total: selected.reduce((sum, profile) => sum + profile.population, 0),
+    male: selected.reduce((sum, profile) => sum + profile.male, 0),
+    female: selected.reduce((sum, profile) => sum + profile.female, 0),
+    female15to24: ageBreakdown.find((row) => row.band === "15-24")?.female ?? 0,
+    female15to44: (ageBreakdown.find((row) => row.band === "15-24")?.female ?? 0) + (ageBreakdown.find((row) => row.band === "25-44")?.female ?? 0),
+    ageBreakdown,
+    includedStpugCodes: selected.map((profile) => profile.code).sort(),
+    units,
+    note: "年龄 × 性别人口来自 2021 人口普查官方 STPUG 小合并组。该统计层级按官方发布单元整组汇总，不能拆分回 292 个 TPU；画像人口与 TPU 覆盖人口可能存在口径差异。",
+  };
 }
 
 export function nearbyPopulation(lat: number, lng: number, radiusKm: number): NearbyPopulation {
@@ -242,6 +323,7 @@ export function nearbyPopulation(lat: number, lng: number, radiusKm: number): Ne
     tpuCount: matches.length,
     includedTpuCodes: matches.map((feature) => feature.properties.tpu).sort((a, b) => a - b).map(String),
     breakdown,
+    demographicProfile: buildDemographicProfile(lat, lng, radius),
     note: "数字名称为“周边 TPU 覆盖人口近似值”。按 2021 年常住人口统计；所在 TPU 直接计入，其他 TPU 按代表点落入半径计入，不代表圆形范围内的精确人口，也不代表实时到访人口。",
   };
 }
