@@ -113,6 +113,25 @@
           "population aggregation"
         ]
       }
+    },
+    {
+      "id": "csdi-major-housing-estates",
+      "status": "real",
+      "provider": "CSDI / Census and Statistics Department",
+      "actualSource": "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1695182015782_79001&format=geojson&layer_name=MHE_21C",
+      "period": "2021 Population Census",
+      "retrievedAt": "2026-10-28",
+      "note": "540 个主要屋苑统计及边界，坐标为 WGS84。",
+      "featureCount": 540,
+      "validation": {
+        "passed": true,
+        "checks": [
+          "540 major housing estate features",
+          "WGS84 geometry",
+          "population field"
+        ],
+        "failures": []
+      }
     }
   ]
 }

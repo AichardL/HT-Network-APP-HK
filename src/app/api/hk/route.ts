@@ -1,6 +1,6 @@
 import { json } from "@/lib/hk-api";
 import { HK_DISTRICTS, HK_PLANNING_UNITS } from "@/lib/hk/districts";
-import { HK_TPU_LAYER, TPU_POPULATION_SOURCE, totalPopulation } from "@/lib/hk/population";
+import { HK_POPULATION_LAYERS, HK_TPU_LAYER, TPU_POPULATION_SOURCE, totalPopulation } from "@/lib/hk/population";
 import { HK_TRANSIT } from "@/lib/hk/transit";
 import { HK_MARKET_SOURCE } from "@/lib/hk/skeleton";
 import manifest from "@/lib/hk/manifest.json";
@@ -21,6 +21,7 @@ export function GET() {
         source: TPU_POPULATION_SOURCE,
         summary: { total: total.pop, young: total.young, tpuCount: total.tpus },
         layer: HK_TPU_LAYER,
+        hierarchy: HK_POPULATION_LAYERS,
       },
     },
     transit: HK_TRANSIT,

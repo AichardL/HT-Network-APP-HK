@@ -7,9 +7,17 @@ const readJson = async (file) => JSON.parse(await readFile(resolve(root, file), 
 const transit = await readJson("src/lib/hk/transit.json");
 const manifest = await readJson("src/lib/hk/manifest.json");
 const tpu = await readJson("src/lib/hk/tpu-population.json");
+const planningLookup = await readJson("src/lib/hk/planning-lookup.json");
+const mhe = await readJson("src/lib/hk/mhe-population.json");
 const failures = [];
 
 if (tpu.features?.length !== 292) failures.push(`TPU feature count expected 292, got ${tpu.features?.length ?? 0}`);
+if (mhe.features?.length !== 540) failures.push(`MHE feature count expected 540, got ${mhe.features?.length ?? 0}`);
+if (planningLookup.items?.length !== 292) failures.push(`planning lookup expected 292 TPU mappings, got ${planningLookup.items?.length ?? 0}`);
+for (const [field, expected] of [["ppu", 9], ["spu", 52]]) {
+  const count = new Set((planningLookup.items ?? []).map((item) => item[field])).size;
+  if (count !== expected) failures.push(`${field.toUpperCase()} count expected ${expected}, got ${count}`);
+}
 for (const mode of ["heavy", "light"]) {
   const snapshot = transit[mode];
   if (snapshot.source.status !== "real") failures.push(`${mode} source is not real`);

@@ -1,6 +1,6 @@
 import { json } from "@/lib/hk-api";
 import { findBoundary } from "@/lib/hk/districts";
-import { findPlanning, findTpu, TPU_POPULATION_SOURCE } from "@/lib/hk/population";
+import { findPlanning, findTpu, nearbyPopulation, TPU_POPULATION_SOURCE } from "@/lib/hk/population";
 import { nearestStation } from "@/lib/hk/transit";
 
 export const runtime = "nodejs";
@@ -14,7 +14,9 @@ export function GET(req: Request) {
   const lngRaw = query.get("lng") ?? "";
   const lat = Number(latRaw);
   const lng = Number(lngRaw);
-  if (!INPUT_RE.test(latRaw) || !INPUT_RE.test(lngRaw) || !Number.isFinite(lat) || !Number.isFinite(lng)) {
+  const radiusRaw = query.get("radiusKm") ?? "1";
+  const radiusKm = Number(radiusRaw);
+  if (!INPUT_RE.test(latRaw) || !INPUT_RE.test(lngRaw) || !Number.isFinite(lat) || !Number.isFinite(lng) || !Number.isFinite(radiusKm)) {
     return json({ error: "缺少合法 lat / lng" }, 400);
   }
   if (lat < 22.1 || lat > 22.6 || lng < 113.8 || lng > 114.5) {
@@ -42,6 +44,7 @@ export function GET(req: Request) {
       source: TPU_POPULATION_SOURCE,
       note: "人口为2021年常住人口统计，不代表实时到访人口。",
     },
+    nearbyPopulation: nearbyPopulation(lat, lng, radiusKm),
     nearestStation: station,
     sources: [
       district ? { provider: "CSDI / Census and Statistics Department", status: "real", note: "2021区议会区边界快照" } : { provider: "CSDI / Census and Statistics Department", status: "unavailable", note: "点位未落入本地区界快照" },

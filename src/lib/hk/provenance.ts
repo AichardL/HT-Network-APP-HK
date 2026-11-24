@@ -34,6 +34,8 @@ export const SOURCE_URLS = {
     "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1635933282224_58228&format=geojson&layer_name=LSUG_21C",
   csdiSmallSubunits:
     "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1635933365202_19171&format=geojson&layer_name=SSUG_21C",
+  csdiMajorHousingEstates:
+    "https://portal.csdi.gov.hk/csdi-webpage/file-api?dataset_id=censtatd_rcd_1695182015782_79001&format=geojson&layer_name=MHE_21C",
   locationSearch:
     "https://www.map.gov.hk/gs/api/v1.0.0/locationSearch",
   mtrHeavy:
